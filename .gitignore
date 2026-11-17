@@ -1,0 +1,29 @@
+# ข้อมูลล็อกอิน / คุกกี้ของเบราว์เซอร์บอท — ห้าม commit เด็ดขาด
+bot/chrome_profile/
+bot/browser_profile/
+.cloudflared/
+*.pem
+
+# environment / cache
+bot/.venv/
+**/__pycache__/
+*.pyc
+node_modules/
+
+# ผลลัพธ์ที่บอทดึงมา (เป็นข้อมูลของแต่ละคน)
+bot/data/*
+!bot/data/.gitkeep
+bot/feed/*
+!bot/feed/.gitkeep
+bot/logs/
+bot/_backups/
+bot/need_affiliate_links.txt
+
+# หน้า static ที่ build_static_pages.js สร้างใหม่ทุกครั้งที่ publish
+pages/p/
+pages/m/
+sitemap.xml
+
+# log ของเซิร์ฟเวอร์ในเครื่อง (มี IP ผู้เข้าชม)
+setup/*.log
+setup/*.log.old

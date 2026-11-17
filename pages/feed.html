@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121212">
+<title>ไถดูเคส — รวมเคส (CaseHub)</title>
+<meta name="description" content="ไถดูเคสมือถือลายสวยและเคสมีลูกเล่นทีละชิ้นแบบเต็มจอ พร้อมราคา Shopee ล่าสุด">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="รวมเคส (CaseHub)">
+<meta property="og:title" content="ไถดูเคส — รวมเคส (CaseHub)">
+<meta property="og:description" content="ไถดูเคสมือถือลายสวยและเคสมีลูกเล่นทีละชิ้นแบบเต็มจอ พร้อมราคา Shopee ล่าสุด">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<link rel="canonical" href="https://example.com/pages/feed.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20261114b">
+<style>
+/* หน้าไถดูเคส (2026-11-14): เลื่อนแนวตั้งทีละเคสแบบ TikTok · ปัดซ้าย-ขวาดูสี/ลายอื่น (ถ้ามีภาพตัวเลือก) · ใช้สีเดิมของเว็บ (ink + lime) */
+html,body{height:100%;background:var(--ink);overflow:hidden}
+.fv{position:fixed;inset:0;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior:contain;scrollbar-width:none}
+.fv::-webkit-scrollbar{display:none}
+.fv-s{position:relative;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;color:#fff;display:flex;flex-direction:column}
+.fv-s .bg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(36px) brightness(.45) saturate(1.2);transform:scale(1.1)}
+.fv-car{position:relative;flex:1 1 auto;min-height:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-top:62px}
+.fv-car::-webkit-scrollbar{display:none}
+.fv-car figure{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:0 16px}
+.fv-car img{max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:cover;border-radius:28px;background:var(--tile);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.fv-dots{position:relative;display:flex;justify-content:center;gap:6px;margin:12px 0 0;min-height:6px}
+.fv-dots i{width:6px;height:6px;border-radius:9px;background:rgba(255,255,255,.35);transition:.2s}
+.fv-dots i.on{width:18px;background:var(--lime)}
+.fv-info{position:relative;padding:14px 16px calc(18px + env(safe-area-inset-bottom));max-width:560px;width:100%;margin:0 auto}
+.fv-tag{display:inline-block;background:var(--lime);color:var(--ink);font-weight:700;font-size:13px;padding:4px 12px;border-radius:99px;transform:rotate(-3deg);margin-bottom:8px}
+.fv-cn{display:inline-block;margin:0 0 8px 6px;font-size:13px;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.14)}
+.fv-info h2{font-size:16px;font-weight:500;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.fv-pr{display:flex;align-items:baseline;gap:10px;margin:8px 0 2px;flex-wrap:wrap}
+.fv-pr b{font-size:40px;font-weight:700;line-height:1;color:var(--lime);letter-spacing:-.5px}
+.fv-pr span{font-size:13px;color:rgba(255,255,255,.7)}
+.fv-meta{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:12px}
+.fv-acts{display:flex;gap:10px}
+.fv-acts .btn{flex:1;justify-content:center;padding:13px 16px}
+.fv-acts .btn.ghost{border-color:rgba(255,255,255,.6);color:#fff;flex:0 0 auto}
+.fv-acts .btn.ghost:hover{background:rgba(255,255,255,.1)}
+.fv-top{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;gap:12px;padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));color:#fff;pointer-events:none}
+.fv-top a,.fv-top .ct{pointer-events:auto}
+.fv-top .logo{color:#fff}
+.fv-top .logo i{background:var(--lime);color:var(--ink)}
+.fv-top .ct{margin-left:auto;font-size:13px;background:rgba(0,0,0,.35);padding:5px 12px;border-radius:99px;font-variant-numeric:tabular-nums}
+.fv-top .x{width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.35);display:grid;place-items:center;font-size:20px;color:#fff}
+.fv-hint{position:absolute;left:50%;top:calc(68px + env(safe-area-inset-top));transform:translateX(-50%);background:rgba(0,0,0,.55);color:#fff;font-size:14px;padding:8px 16px;border-radius:99px;display:flex;align-items:center;gap:8px;white-space:nowrap;animation:fdUp 1.6s ease-in-out infinite;pointer-events:none}
+.fv-hint.gone{display:none}
+@keyframes fdUp{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-8px)}}
+@media (prefers-reduced-motion:reduce){.fv-hint{animation:none}}
+.fv-nav{display:none}
+@media (hover:hover) and (pointer:fine){
+  .fv-car img{max-height:min(100%,560px)}
+  .fv-nav{display:flex;flex-direction:column;gap:10px;position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:5}
+  .fv-nav button{width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:20px;cursor:pointer}
+  .fv-nav button:hover{background:var(--lime);color:var(--ink)}
+  .fv-lr{display:grid;place-items:center;position:absolute;top:calc(31px + 40%);z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+  .fv-lr:hover{background:var(--lime);color:var(--ink)}
+  .fv-lr.l{left:max(16px,calc(50% - 340px))}.fv-lr.r{right:max(90px,calc(50% - 340px))}
+}
+.fv-lr{display:none}
+@media (hover:hover) and (pointer:fine){.fv-lr{display:grid}}
+@media(max-width:759px){.fv{bottom:calc(58px + env(safe-area-inset-bottom))}.fv-info{padding-bottom:14px}}
+.fv-top .src{font-size:12px;background:rgba(255,255,255,.16);padding:4px 10px;border-radius:99px;pointer-events:none}
+.fv-top .home{pointer-events:auto;font-size:13px;background:rgba(0,0,0,.45);color:#fff;padding:7px 13px;border-radius:99px;white-space:nowrap}
+.fv-top .src,.fv-top .ct,.fv-top .home{white-space:nowrap}
+@media(max-width:430px){.fv-top{gap:8px}.fv-top .lt{display:none}}
+.fv-empty{color:#fff;text-align:center;padding:40vh 24px 0}
+</style>
+</head>
+<body data-page="feed">
+<header class="fv-top"><a class="logo" href="../index.html"><i>C</i><span class="lt">รวมเคส</span></a><span class="src" id="src" hidden></span><span class="ct" id="ct"></span><a class="x" id="x" href="../index.html" aria-label="ปิด">×</a></header>
+<main class="fv" id="fv" aria-label="ไถดูเคส"></main>
+<div class="fv-nav"><button type="button" data-d="-1" aria-label="เคสก่อนหน้า">↑</button><button type="button" data-d="1" aria-label="เคสถัดไป">↓</button></div>
+<script src="../assets/live.js?v=20261113b"></script>
+<script src="../assets/feed-colors.js?v=20261114a"></script>
+<script src="../assets/feed.js?v=20261114e"></script>
+<script src="../assets/track.js?v=20261113a"></script>
+<script src="../assets/tabbar.js?v=20261114a"></script>
+</body>
+</html>

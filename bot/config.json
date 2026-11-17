@@ -1,0 +1,57 @@
+{
+  "_help": "คีย์ที่ขึ้นต้นด้วย _ เป็นคำอธิบาย บอทไม่อ่าน แก้ไฟล์นี้ด้วย Notepad แล้วบันทึกเป็น UTF-8",
+
+  "_searches": "คำค้นที่บอทจะค้นใน Shopee ทุกรอบ ใส่รุ่นมือถือ (model) และสไตล์ลาย (style) ไว้ใช้กรองบนเว็บ / max_items = เก็บกี่ชิ้นต่อคำค้น",
+  "searches": [
+    { "keyword": "เคส iphone 15 ลายน่ารัก", "model": "iPhone 15", "style": "น่ารัก", "max_items": 15 },
+    { "keyword": "เคส iphone 13 ลายมินิมอล", "model": "iPhone 13", "style": "มินิมอล", "max_items": 15 },
+    { "keyword": "เคส samsung a55 ลายดอกไม้", "model": "Samsung A55", "style": "ดอกไม้", "max_items": 15 },
+    { "keyword": "เคส oppo a79 ลายน่ารัก", "model": "OPPO A79", "style": "น่ารัก", "max_items": 15 },
+    { "keyword": "เคส iphone 17 pro max ลายน่ารัก", "model": "iPhone 17 Pro Max", "style": "น่ารัก", "max_items": 15 },
+    { "keyword": "เคส iphone 16 pro max ลายการ์ตูน", "model": "iPhone 16 Pro Max", "style": "การ์ตูน", "max_items": 15 },
+    { "keyword": "เคส iphone 18 pro max ลายหมี", "model": "iPhone 18 Pro Max", "style": "น่ารัก", "max_items": 15 }
+  ],
+
+  "_product_urls": "สินค้าที่คุณคัดเองและอยากให้เช็กทุกรอบ ใช้ลิงก์เต็มจากเว็บ Shopee (ไม่ใช่ลิงก์สั้น s.shopee) จะใส่เป็นข้อความเฉยๆ หรือ { url, model, style } ก็ได้",
+  "product_urls": [],
+
+  "_search_sort": "relevancy = ตามความเกี่ยวข้อง, sales = ขายดีสุด, ctime = ล่าสุด",
+  "search_sort": "sales",
+
+  "_filters": "ตัดสินค้าที่ราคาเกิน / เรตติ้งต่ำ / ขายได้น้อยออก (ไม่ใช้กับ product_urls)",
+  "filters": { "min_price": 15, "max_price": 199, "min_rating": 4.5, "min_sold": 30 },
+
+  "_exclude_words": "ตัดสินค้าที่ชื่อมีคำเหล่านี้ (กันลายลิขสิทธิ์ปลอม) เพิ่ม/ลบได้",
+  "exclude_words": ["disney", "marvel", "sanrio", "hello kitty", "kuromi", "cinnamoroll", "pokemon", "doraemon", "snoopy", "one piece", "gucci", "chanel", "louis vuitton", "supreme", "dior", "ซานริโอ", "โดราเอมอน", "คุโรมิ", "เฮลโลคิตตี้", "คิตตี้"],
+
+  "_feed": "สินค้าจาก CSV ลิงก์ affiliate (วางไฟล์ไว้ในโฟลเดอร์ feed แล้วรัน 7_import_links.bat) / feed_exclude_words = ตัดของที่ไม่ใช่เคส (ฟิล์ม สติกเกอร์ สายชาร์จ) ออก / track_per_run = แต่ละรอบเปิดหน้าสินค้าใน feed กี่ชิ้น (ชิ้นที่ไม่ได้เช็กนานสุด/ไม่เคยเช็กก่อน) เพื่ออัปเดตรูป ราคา โค้ดร้าน / carry_days = สินค้าที่รอบนี้ยังไม่ได้เช็กยังโชว์บนเว็บต่อกี่วัน",
+  "feed_exclude_words": ["ฟิล์มกระจก", "ฟิล์มกันรอย", "ฟิล์มหลัง", "ฟิล์มเลนส์", "ฟิล์มกันเสือก", "TPE ฟิล์ม", "สติกเกอร์", "สติ๊กเกอร์", "สายชาร์จ", "Power Adapter", "สายคล้องคอ", "Tab", "Stylus", "แท็บเล็ต", "แท็บ"],
+  "track_per_run": 15,
+  "carry_days": 14,
+
+  "_vouchers": "จำนวนหน้าสินค้าที่เปิดดูโค้ดร้านต่อรอบ (หมุนเวียนวันละชุด) และโค้ดที่เช็กเกินกี่วันถือว่าเก่า ไม่เอามาโชว์ / ตอนนี้ 0 เพราะ track_per_run เปิดหน้าสินค้า affiliate ซึ่งได้โค้ดร้านมาด้วยอยู่แล้ว",
+  "check_vouchers_per_run": 0,
+  "voucher_max_age_days": 3,
+
+  "_speed": "เว้นระยะสุ่มระหว่างหน้า (วินาที) และจำนวนหน้าสูงสุดต่อรอบ ยิ่งช้ายิ่งเสี่ยงโดนบล็อกน้อย ไม่แนะนำให้ลด",
+  "delay_seconds": [25, 45],
+  "max_page_loads_per_run": 15,
+  "idle_ms": 1500,
+  "_rest": "พักยาวทุก rest_every หน้า (วินาที: rest_seconds)",
+  "rest_every": 8,
+  "rest_seconds": [150, 240],
+  "_settle": "settle_ms = รอหลังหน้าโหลด (เดิม 2500) / scroll_steps = เลื่อนหน้ากี่ครั้ง (เดิม 4) — ลดลงเพื่ออ่านไวขึ้น ถ้าเริ่มได้รูป/ข้อมูลไม่ครบให้เพิ่มกลับ",
+  "settle_ms": 2500,
+  "scroll_steps": 4,
+
+  "_browser": "headless=false เห็นหน้าต่างเบราว์เซอร์ (โดนกันบอทน้อยกว่า) / browser_channel = chrome ใช้ Google Chrome ที่ติดตั้งในเครื่อง",
+  "headless": false,
+  "browser_channel": "chrome",
+
+  "_browser_mode": "attach = บอทเกาะ Chrome ปกติที่เปิดด้วยพอร์ต (ล็อกอิน Google ได้ ไม่โดนบล็อกเหมือนหน้าต่างที่ Playwright เปิดเอง) ใช้โฟลเดอร์ chrome_profile / launch = Playwright เปิดเบราว์เซอร์เอง",
+  "browser_mode": "attach",
+  "attach_port": 9222,
+
+  "_publish": "true = products.json มีเฉพาะสินค้าที่ใส่ลิงก์ affiliate แล้ว (ไม่มีลิงก์ = ไม่ได้ค่าคอม)",
+  "publish_only_with_affiliate_link": true
+}

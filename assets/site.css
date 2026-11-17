@@ -1,0 +1,1477 @@
+/* รวมเคส (CaseHub) — ดีไซน์ A (MIXX): เขียวมะนาว + ภาพใหญ่ + มุมมนมาก */
+:root{--lime:#C5F23A;--lime-d:#A8D61F;--ink:#121212;--soft:#6B6B6B;--tile:#F1F1EF;--line:#E4E4DF;--ok:#0E8A4F;--warn:#B45309;--sh:#EE4D2D;--tt:#111;--gr:#00B14F}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Anuphan',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.5;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,select,input{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.sh{background:var(--sh)}.tt{background:var(--tt)}.gr{background:var(--gr)}
+
+/* แถบประกาศ */
+.topbar{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+.topbar b{color:var(--lime);font-weight:600}
+.topbar a{text-decoration:underline;text-underline-offset:3px;margin-left:8px}
+
+/* นำทาง */
+.nav{display:flex;align-items:center;gap:30px;padding:18px 0}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:22px}
+.logo i{width:30px;height:30px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-style:normal;font-size:15px}
+.menu{display:flex;gap:26px;font-size:14.5px;font-weight:500;margin-left:auto}
+.menu a{padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{border-color:var(--lime-d)}
+.menu a.on{border-color:var(--ink)}
+.cta{background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;font-weight:500;font-size:14px;white-space:nowrap}
+.cta:hover{background:#333}
+
+/* ปุ่ม */
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-weight:600;padding:12px 24px;border-radius:999px;font-size:14.5px;border:0;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--lime-d)}
+.btn.dark{background:var(--ink);color:#fff}.btn.dark:hover{background:#333}
+.btn.ghost{background:transparent;border:1.5px solid var(--ink)}.btn.ghost:hover{background:var(--tile)}
+.btn.sm{padding:8px 16px;font-size:13.5px}
+.btn.ar{width:46px;padding:0;justify-content:center;font-size:18px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-size:13.5px;cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;background:var(--tile);border-radius:6px;padding:2px 8px;color:#444}
+.badge{position:absolute;left:14px;top:14px;background:#fff;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;display:flex;gap:6px;align-items:center}
+.badge.mall{background:var(--ink);color:var(--lime)}
+
+/* ฮีโร */
+.hero{position:relative;height:560px;border-radius:28px;overflow:hidden;background:#222}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.18) 58%,rgba(0,0,0,0) 100%)}
+.hero h1{position:absolute;left:44px;top:56px;color:#fff;font-weight:700;font-size:88px;line-height:1;letter-spacing:-2px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero .copy{position:absolute;left:44px;bottom:40px;display:flex;flex-direction:column;gap:16px;max-width:min(560px,calc(100% - 88px))}
+.hero .lead{color:#fff;max-width:420px;font-size:15px;line-height:1.55}
+.hero .models{display:flex;gap:6px;flex-wrap:wrap}
+.hero .models a{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:5px 12px;font-size:12.5px;backdrop-filter:blur(6px)}
+.hero .models a.on{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:600}
+.hero .acts{display:flex;gap:8px}
+.float{position:absolute;right:28px;bottom:28px;width:300px;background:#fff;border-radius:22px;padding:14px}
+.float .im{height:150px;border-radius:14px;background:var(--tile);overflow:hidden}
+.float img{width:100%;height:100%;object-fit:cover}
+.float .t{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px}
+.float b{font-size:14px;line-height:1.3}
+.float .go{width:34px;height:34px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:none}
+
+/* หัวข้อส่วน */
+.sec{display:grid;grid-template-columns:1fr 380px;align-items:end;gap:40px;margin:72px 0 28px}
+.sec.tight{margin-top:48px}
+h2{font-size:42px;font-weight:600;line-height:1.15;letter-spacing:-.5px}
+h3{font-size:22px;font-weight:600;line-height:1.25}
+.sec p,.muted{font-size:14px;color:var(--soft);line-height:1.6}
+.sec .b{display:inline-flex;gap:6px;margin-top:14px}
+
+/* ตัวเลือกรุ่น */
+.series{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.series .s{background:var(--tile);border-radius:24px;padding:22px}
+.series .s h4{font-size:20px;font-weight:600;display:flex;justify-content:space-between;align-items:baseline}
+.series .s h4 small{font-size:12.5px;color:var(--soft);font-weight:400}
+.series .s .l{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.series .s .l a{background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;display:inline-flex;gap:6px;align-items:center;transition:.15s}
+.series .s .l a:hover{background:var(--lime)}
+.series .s .l a i{font-style:normal;font-size:11px;font-weight:700;background:var(--ink);color:var(--lime);border-radius:999px;padding:0 6px}
+.series .s .l a.zero i{background:#ddd;color:#777}
+
+/* การ์ดสินค้า */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tile{display:block}
+.tile .im{background:var(--tile);border-radius:24px;overflow:hidden;aspect-ratio:1/1;position:relative}
+.tile .im img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.tile:hover .im img{transform:scale(1.03)}
+.tile .ft{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 4px 0;gap:14px}
+.tile h4{font-size:16px;font-weight:600;line-height:1.35}
+.tile .ft p{font-size:13px;color:var(--soft);margin-top:2px}
+.tile .arw{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;flex:none;transition:.15s}
+.tile:hover .arw{background:var(--lime);border-color:var(--lime)}
+.tile .tags{display:flex;gap:5px;flex-wrap:wrap;padding:8px 4px 0}
+.rows{display:grid;gap:4px;margin-top:10px;padding:0 4px}
+.prow{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#555}
+.prow .v{margin-left:auto;font-weight:600;color:#222}
+.prow.best .v{color:var(--ok);font-size:14px}
+.prow.na .v{color:#aaa;font-weight:400}
+.prow .t{font-size:10px;background:#E5F6EC;color:var(--ok);border-radius:4px;padding:0 5px;font-weight:600}
+.fit{display:inline-flex;gap:5px;align-items:center;font-size:11.5px;font-weight:600;border-radius:999px;padding:3px 10px;margin:8px 4px 0}
+.fit.yes{background:#E5F6EC;color:var(--ok)}
+.fit.maybe{background:#FEF3C7;color:var(--warn)}
+.fit.named{background:#E8F0FE;color:#1D4ED8}
+
+/* แถบโปรโมชัน */
+.band{margin:72px 0 0;background:var(--tile);border-radius:32px;padding:34px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:20px}
+.dl{background:#fff;border-radius:24px;padding:24px;position:relative}
+.dl.lime{background:var(--lime)}
+.dl h4{font-size:22px;font-weight:600;line-height:1.25}
+.dl p{font-size:13px;color:#444;margin-top:8px;line-height:1.55}
+.dl .big{font-size:46px;font-weight:700;letter-spacing:-1px;margin-top:8px;line-height:1.1}
+.dl .big small{font-size:14px;color:var(--soft);font-weight:500;letter-spacing:0;margin-left:6px}
+.dl .off{position:absolute;right:18px;top:18px;background:var(--ink);color:var(--lime);border-radius:999px;font-size:12px;font-weight:600;padding:4px 10px}
+.cd{display:flex;gap:6px;margin-top:16px}
+.cd div{background:#fff;border-radius:12px;padding:8px 10px;text-align:center;font-weight:700;font-size:24px;min-width:62px;line-height:1.2}
+.cd small{display:block;font-size:10.5px;font-weight:500;color:var(--soft)}
+.steps{counter-reset:s;display:grid;gap:10px;margin-top:14px}
+.steps li{list-style:none;counter-increment:s;display:flex;gap:10px;font-size:13.5px}
+.steps li::before{content:counter(s);flex:none;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:12px;font-weight:700}
+
+/* คลิป */
+.clips{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.clip{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:9/14;background:var(--tile);border:2px dashed #cfcfc8;display:grid;place-items:center;text-align:center;color:var(--soft);font-size:13px;padding:14px}
+.clip b{display:block;font-size:26px;color:#bbb;margin-bottom:6px}
+
+/* หน้าในทั้งหมด */
+.crumb{font-size:13px;color:var(--soft);padding:6px 0 18px}
+.crumb a:hover{color:var(--ink);text-decoration:underline}
+.pagehead{background:var(--tile);border-radius:28px;padding:36px 40px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.pagehead h1{font-size:52px;font-weight:700;letter-spacing:-1px;line-height:1.1}
+.pagehead h1 em{font-style:normal;background:var(--lime);padding:0 10px;border-radius:12px}
+.pagehead p{max-width:440px;font-size:14px;color:var(--soft)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.toolbar .sp{margin-left:auto}
+.toolbar select{border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;background:#fff;font-size:13.5px}
+.empty{background:var(--tile);border-radius:24px;padding:40px;text-align:center;color:var(--soft);grid-column:1/-1}
+
+/* หน้าสินค้า */
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.pd .gal{background:var(--tile);border-radius:28px;overflow:hidden;aspect-ratio:1/1;position:sticky;top:20px}
+.pd .gal img{width:100%;height:100%;object-fit:cover}
+.pd h1{font-size:34px;font-weight:700;line-height:1.2;letter-spacing:-.5px;margin:6px 0 10px}
+.facts{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 20px}
+.facts span{background:var(--tile);border-radius:999px;padding:5px 12px;font-size:13px}
+.box{border:1.5px solid var(--line);border-radius:22px;padding:20px 22px;margin-top:16px}
+.box h3{font-size:18px;margin-bottom:12px}
+.cmp{width:100%;border-collapse:collapse;font-size:14px}
+.cmp td{padding:10px 0;border-top:1px solid var(--line)}
+.cmp tr:first-child td{border-top:0}
+.cmp td:last-child{text-align:right;font-weight:600}
+.cmp .na td:last-child{color:#aaa;font-weight:400}
+.sel{width:100%;border:1.5px solid var(--ink);border-radius:14px;padding:11px 14px;background:#fff;font-size:15px}
+.verdict{margin-top:12px;padding:12px 14px;border-radius:14px;font-size:14px}
+.verdict.yes{background:#E5F6EC;color:#075f37}
+.verdict.maybe{background:#FEF3C7;color:#7c3a06}
+.verdict.no{background:#F3F4F6;color:#444}
+.calc label{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:14px;cursor:pointer}
+.calc input[type=radio],.calc input[type=checkbox]{accent-color:var(--ink);width:17px;height:17px}
+.calc .line{display:flex;justify-content:space-between;font-size:14px;padding:5px 0}
+.calc .line.neg{color:var(--ok)}
+.calc .total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);margin-top:10px;padding-top:12px;font-weight:700}
+.calc .total b{font-size:32px;letter-spacing:-1px}
+.qty{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:999px;padding:3px}
+.qty button{width:30px;height:30px;border-radius:50%;border:0;background:var(--tile);cursor:pointer;font-size:17px}
+.note{font-size:12.5px;color:var(--soft);margin-top:10px;line-height:1.55}
+.warnbox{background:#FEF3C7;color:#7c3a06;border-radius:14px;padding:11px 14px;font-size:13.5px;margin-top:14px}
+.ph{background:var(--tile);border-radius:16px;padding:22px;text-align:center;color:var(--soft);font-size:13.5px}
+
+/* หน้าโค้ด */
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.vch{display:flex;border-radius:20px;overflow:hidden;background:#fff;border:1.5px solid var(--line)}
+.vch .l{background:var(--lime);padding:18px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:120px}
+.vch .l b{font-size:34px;line-height:1;letter-spacing:-1px}
+.vch .l small{font-size:11.5px;font-weight:600}
+.vch .r{padding:16px 18px;font-size:13.5px;flex:1;border-left:2px dashed var(--line)}
+.vch .r b{font-size:15px;display:block;margin-bottom:2px}
+.vch.dim{opacity:.55}
+.vch .st{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--ok)}
+.vch.dim .st{color:#999}
+
+/* หน้าโครงสร้าง */
+.tree{font-family:ui-monospace,Consolas,monospace;font-size:13.5px;line-height:1.75;background:var(--ink);color:#e8e8e2;border-radius:22px;padding:22px 26px;overflow:auto;white-space:pre}
+.tree .ok{color:var(--lime)}.tree .pl{color:#8a8a84}
+.smap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.smap .n{background:var(--tile);border-radius:20px;padding:16px 18px;font-size:13.5px}
+.smap .n b{display:block;font-size:15px;margin-bottom:4px}
+.smap .n code{font-size:12px;color:var(--soft)}
+.smap .n.done{background:var(--lime)}
+.smap .n .s{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px;background:var(--ink);color:var(--lime)}
+.smap .n:not(.done) .s{background:#ddd;color:#555}
+.flow{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.flow .b{background:var(--tile);border-radius:18px;padding:14px 16px;font-size:13px;flex:1;min-width:150px}
+.flow .b b{display:block;font-size:14px;margin-bottom:3px}
+.flow .ar{align-self:center;font-size:20px;color:var(--soft)}
+.flow .b.done{background:var(--lime)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:12.5px;color:var(--soft);font-weight:600}
+.prose{max-width:760px;font-size:15px;line-height:1.75}
+.prose h3{margin:28px 0 8px}
+.prose ul{padding-left:20px}
+.prose li{margin:4px 0}
+
+/* แถบเลือกโทรศัพท์/รุ่น (ติดบนสุดทุกหน้า) */
+.pbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 0}
+.pbar-row{display:flex;align-items:center;gap:10px}
+.pf{position:relative;flex:1;max-width:330px}
+.pf.wide{max-width:380px}
+.pfb{width:100%;display:flex;align-items:center;gap:10px;background:var(--tile);border:1.5px solid transparent;border-radius:999px;padding:7px 16px 7px 8px;text-align:left;cursor:pointer;transition:.15s}
+.pfb:hover{border-color:#cfcfc8}
+.pf.open .pfb{background:#fff;border-color:var(--ink)}
+.pfb .pi{width:34px;height:34px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:none}
+.pfb small{display:block;font-size:11px;color:var(--soft);line-height:1.1}
+.pfb b{display:block;font-size:15px;line-height:1.25;font-weight:600;white-space:nowrap}
+.pfb i{margin-left:auto;font-style:normal;color:var(--soft);font-size:12px}
+.parrow{color:#b3b3ac;font-size:18px}
+.pgo{margin-left:auto;white-space:nowrap}
+.pgo .ar2{font-size:16px}
+.pop{display:none;position:absolute;left:0;top:calc(100% + 8px);min-width:100%;width:max-content;max-width:420px;background:#fff;border-radius:22px;box-shadow:0 20px 56px rgba(0,0,0,.2);border:1px solid var(--line);padding:10px}
+.pf.open .pop{display:block}
+.po{display:block;width:100%;text-align:left;background:transparent;border:0;border-radius:14px;padding:9px 14px;cursor:pointer}
+.po:hover{background:var(--tile)}
+.po.sel{background:var(--lime)}
+.po b{display:block;font-size:14.5px;font-weight:600}
+.po small{display:block;font-size:12px;color:var(--soft)}
+.po.dis{opacity:.5;cursor:not-allowed}
+.po.dis:hover{background:transparent}
+.gtabs{display:flex;gap:4px;padding:2px 2px 10px}
+.gtabs button{flex:1;border:0;background:var(--tile);border-radius:12px;padding:8px 0;font-size:17px;font-weight:700;cursor:pointer}
+.gtabs button.on{background:var(--ink);color:var(--lime)}
+.mchips{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+
+/* เวทีลองทาบ */
+.tryon-box{padding:0}
+.ty{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;align-items:start}
+.ty-view{background:var(--tile);border-radius:32px;padding:14px;position:sticky;top:76px}
+.ty-stage{height:clamp(480px,calc(100vh - 390px),610px);padding-top:50px;box-sizing:border-box;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 46%,#fff 0%,#fbfbf9 55%,#f3f3ef 100%);border-radius:24px;overflow:hidden}
+.ty-phone svg{filter:drop-shadow(0 16px 20px rgba(0,0,0,.2))}
+.ty-stage{position:relative}
+/* เคสเลื่อนลงมาครอบเครื่อง */
+.ty-case{transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s;transform-box:view-box;transform-origin:50% 50%}
+.ty-stage.off .ty-case{opacity:0;transform:translateY(-9%) scale(1.05)}
+@media (prefers-reduced-motion:reduce){.ty-case{transition:opacity .2s}.ty-stage.off .ty-case{transform:none}}
+.ty-tog,.ty-mode{display:inline-flex;background:rgba(255,255,255,.92);border-radius:999px;padding:3px;box-shadow:0 1px 0 rgba(0,0,0,.06),0 0 0 1px #e4e4df}
+.ty-tog{position:absolute;left:12px;top:12px;z-index:3}
+.ty-tog button,.ty-mode button{border:0;background:transparent;border-radius:999px;padding:6px 13px;font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;color:var(--ink)}
+.ty-tog button.on,.ty-mode button.on{background:var(--ink);color:var(--lime)}
+.ty-mode{margin:0 0 14px}
+.ty-badge{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);z-index:3;background:#fff;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;color:#b4352a;box-shadow:0 0 0 1px #f0d2cd;white-space:nowrap}
+.ty-duo{display:grid;grid-template-columns:1fr 1fr;width:100%;height:100%;align-items:end;padding:44px 6px 10px}
+.ty-pane{border:0;background:transparent;font:inherit;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;padding:0;min-width:0}
+.ty-pane .ty-phone{display:block;max-width:100%}
+.ty-pane .ty-phone svg{max-width:100%;height:auto}
+.ty-cap{display:block;text-align:center;max-width:100%;padding:0 6px;line-height:1.3}
+.ty-cap i,.ty-slots i,.ty-tag,.ty-it em{font-style:normal;display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px var(--ink);font-weight:700;font-size:11px;flex:none}
+.ty-pane.cur .ty-cap i,.ty-slots .on i{background:var(--ink);color:var(--lime)}
+.ty-cap b{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;margin-top:4px}
+.ty-cap small{font-size:11.5px;color:var(--soft)}.ty-cap .f-yes{color:var(--ok)}.ty-cap .f-maybe{color:var(--warn)}.ty-cap .f-no{color:#b4352a}
+.ty-slots{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}
+.ty-slots button{display:flex;gap:8px;align-items:center;border:1.5px solid #e4e4df;background:#fff;border-radius:14px;text-align:left;padding:8px 10px;font:inherit;cursor:pointer;min-width:0}
+.ty-slots button.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--lime)}
+.ty-slots span{min-width:0}.ty-slots small{display:block;font-size:11px;color:var(--soft)}
+.ty-slots b{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;font-size:12.5px}
+.ty-it{position:relative}.ty-it em{position:absolute;right:6px;top:6px;width:18px;height:18px;font-size:10px;background:var(--ink);color:var(--lime)}
+.ty-info .ty-tag{margin-right:-4px}
+.ty-diff{margin:8px 2px 0;font-weight:600;color:var(--ink)}
+.ty-name{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px}
+.ty-name b{font-size:18px}.ty-name span{font-size:13px;color:var(--soft)}
+.ty-side .verdict{margin:0 0 16px}
+.ty-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.ty-row>span{font-size:13.5px;font-weight:600;min-width:62px}
+.ty-row>div{display:flex;gap:8px;flex-wrap:wrap}
+.sw{width:30px;height:30px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1.5px #cfcfc8;background:var(--c);cursor:pointer;padding:0;position:relative;overflow:hidden}
+.sw.on{box-shadow:0 0 0 2.5px var(--ink)}
+.sw .clr{position:absolute;inset:0;background:linear-gradient(135deg,#fff 0 46%,#d44 46% 54%,#fff 54%)}
+.ty-h{font-size:14px;font-weight:700;margin:16px 0 8px;display:flex;gap:8px;align-items:baseline}
+.ty-h small{font-weight:400;color:var(--soft);font-size:12.5px}
+.ty-flt{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.ty-flt button{border:1.5px solid #e4e4df;background:#fff;border-radius:999px;padding:5px 11px;font:inherit;font-size:12.5px;cursor:pointer}
+.ty-flt button small{color:var(--soft);font-size:11px}
+.ty-flt button.on{background:var(--ink);border-color:var(--ink);color:#fff}.ty-flt button.on small{color:var(--lime)}
+.ty-it .ty-pick{font-style:normal;color:var(--ink);background:var(--lime);border-radius:6px;padding:0 5px;font-size:10.5px}
+.ty-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:290px;overflow:auto;padding:2px}
+.ty-it{display:flex;gap:10px;align-items:center;background:#fff;border:1.5px solid #e4e4df;border-radius:16px;padding:8px;text-align:left;cursor:pointer;transition:.15s}
+.ty-it:hover{border-color:#999}
+.ty-it.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--lime)}
+.ty-it img{width:46px;height:46px;border-radius:10px;object-fit:cover;flex:none;background:var(--tile)}
+.ty-it b{display:block;font-size:12.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ty-it small{font-size:11.5px;color:var(--soft)}
+.ty-it.f-yes small{color:var(--ok)}.ty-it.f-maybe small{color:var(--warn)}.ty-it.f-no{opacity:.6}
+.ty-info{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:16px;background:#fff;border-radius:18px;padding:12px 14px;flex-wrap:wrap}
+.ty-info b{display:block;font-size:14px}.ty-info span{font-size:12.5px;color:var(--soft)}
+.ty-btns{display:flex;gap:6px}
+.ty-spec{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.ty-spec div span{display:block;font-size:11px;color:var(--soft)}
+.ty-spec div b{display:block;font-size:12.5px;font-weight:600;line-height:1.35}
+.box .ty{grid-template-columns:1fr}
+.box .ty-view{padding:0;background:transparent;position:static}
+.box .ty-stage{height:340px;padding-top:0}
+
+/* หน้าลองทาบ: ซ้าย = เวทีติดหน้าจอ (ยังเห็นเครื่องตอนเลื่อนเลือกเคส) · ขวา = กริดเคสรูปใหญ่ แบบ CASETiFY/Apple */
+.ty-model{position:absolute;right:16px;top:18px;z-index:3;font-size:12.5px;font-weight:600;color:var(--soft)}
+/* บอกคนซื้อว่าภาพลองทาบเป็นเคสที่คล้ายกัน (ผู้ใช้ 9 พ.ย. 2026) */
+.ty-sim{display:block;margin-top:4px;font-size:12px;line-height:1.35;color:#8a5a00;font-weight:500}
+.ty-duo{padding-bottom:20px}
+.ty-opts{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px;background:#fff;border-radius:20px;padding:10px 16px;margin-top:10px}
+.ty-og{display:flex;align-items:center;gap:10px}
+.ty-og>span{font-size:12.5px;font-weight:600;color:var(--soft)}
+.ty-og>div{display:flex;gap:7px;flex-wrap:wrap}
+.ty-opts .sw{width:26px;height:26px}
+.ty-src{margin:8px 8px 0;font-size:11.5px}
+.ty-dock{margin-top:10px;display:grid;gap:8px}
+.ty-dock .ty-info{margin:0;background:var(--ink);color:#fff;border-radius:22px;padding:14px 16px;gap:12px 18px}
+.ty-dock .ty-tx{flex:1 1 180px;min-width:0}
+.ty-dock .ty-tx b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;line-height:1.35;color:#fff}
+.ty-dock .ty-tx span{display:block;margin-top:3px;font-size:12.5px;color:#a9a9a2}
+.ty-dock .ty-sim{color:#e8c46a}
+.ty-buy{display:flex;align-items:center;gap:14px;margin-left:auto}
+.ty-price{font-size:28px;font-weight:700;letter-spacing:-.8px;line-height:1;color:var(--lime)}
+.ty-dock .btn.dark{background:#2c2c2c}.ty-dock .btn.dark:hover{background:#3a3a3a}
+.ty-dock .ty-tag{background:var(--lime);box-shadow:none;color:var(--ink)}
+.ty-sd{margin-top:10px;padding:2px 8px}
+.ty-sd summary{cursor:pointer;font-size:13px;font-weight:600;padding:8px 6px;list-style:none;display:flex;justify-content:space-between}
+.ty-sd summary::after{content:'+';color:var(--soft);font-size:18px;line-height:1}
+.ty-sd[open] summary::after{content:'–'}
+.ty-sd summary::-webkit-details-marker{display:none}
+.ty-sd .ty-spec{margin-top:4px;padding-top:12px}
+.cs-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cs-top .ty-mode{margin:0 0 16px}
+.cs-head{display:flex;align-items:baseline;gap:12px;margin:6px 0 14px;flex-wrap:wrap}
+.cs-head h3{font-size:24px;font-weight:700;letter-spacing:-.4px}
+.cs-head span{font-size:13px;color:var(--soft)}
+.cs-bar{display:flex;justify-content:space-between;align-items:center;gap:10px 14px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.cs-bar .ty-flt{margin:0}
+.cs-sort{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--soft);margin-left:auto}
+.cs-sort select{border:1.5px solid var(--line);border-radius:999px;padding:5px 12px;background:#fff;font-size:13px;color:var(--ink);cursor:pointer}
+.cs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 16px}
+.cs-t{display:block;text-align:left;background:transparent;border:0;padding:0;cursor:pointer;font:inherit;min-width:0}
+.cs-im{display:block;position:relative;aspect-ratio:1/1;background:var(--tile);border-radius:22px;overflow:hidden;transition:box-shadow .18s}
+.cs-im img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.cs-t:hover .cs-im img{transform:scale(1.05)}
+.cs-t.on .cs-im{box-shadow:0 0 0 3px #fff,0 0 0 5.5px var(--ink)}
+.cs-pick{position:absolute;left:10px;top:10px;z-index:2;min-width:26px;height:26px;padding:0 10px;border-radius:999px;background:var(--ink);color:var(--lime);font-style:normal;font-weight:700;font-size:12px;display:grid;place-items:center;white-space:nowrap}
+.cs-cur{position:absolute;right:10px;top:10px;font-size:10.5px;font-weight:700;background:var(--lime);color:var(--ink);border-radius:999px;padding:2px 9px}
+.cs-fit{position:absolute;left:10px;bottom:10px;font-size:11px;font-weight:600;background:#fff;border-radius:999px;padding:2px 10px}
+.f-yes .cs-fit{color:var(--ok)}.f-maybe .cs-fit{color:var(--warn);background:#FEF3C7}.f-no .cs-fit{color:#b4352a}
+.cs-t.f-no .cs-im img{opacity:.5}
+.cs-b{display:block;padding:11px 3px 0}
+.cs-b b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px;line-height:1.4;font-weight:600;min-height:2.8em}
+.cs-m{display:flex;justify-content:space-between;align-items:baseline;margin-top:5px}
+.cs-m strong{font-size:17px;font-weight:700;letter-spacing:-.3px}
+.cs-m small{font-size:12px;color:var(--soft)}
+.cs-more{text-align:center;margin-top:26px}
+.pager{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;width:max-content;max-width:100%;margin:0 auto;padding:8px;background:var(--tile);border:1px solid var(--line);border-radius:999px}
+.pg-n{min-width:44px;height:44px;padding:0 14px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:.15s}
+.pg-n:hover:not(:disabled):not(.on){background:#fff;box-shadow:0 0 0 1px var(--ink) inset}
+.pg-n:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.pg-n.on{background:var(--ink);color:var(--lime);cursor:default}
+.pg-s{background:var(--lime);padding:0 20px}
+.pg-s:hover:not(:disabled){background:var(--lime-d)!important;box-shadow:none!important}
+.pg-n:disabled{background:transparent;opacity:.35;cursor:default}
+.pg-gap{padding:0 2px;color:var(--soft)}
+.pg-info{margin:12px 0 0;font-size:13px;color:var(--soft)}
+@media(max-width:600px){.pager{border-radius:22px;gap:4px;padding:6px}.pg-n{min-width:38px;height:38px;padding:0 10px;font-size:14px}.pg-s{padding:0 14px}}
+
+
+/* หน้าเลือกรุ่น: แถวต่อซีรีส์ ซ้าย = เลขซีรีส์ตัวใหญ่ · ขวา = การ์ดรุ่นพร้อมภาพเครื่อง (แบบการ์ดรุ่นของ Apple) */
+.mdl-nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 8px}
+.mdl-nav span{font-size:13px;color:var(--soft);margin-right:4px}
+.mdl-nav a{border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13.5px;font-weight:500;transition:.15s}
+.mdl-nav a:hover{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+.mdl-sec{display:grid;grid-template-columns:190px minmax(0,1fr);gap:28px;padding:34px 0;border-top:1px solid var(--line);scroll-margin-top:80px}
+.mdl-sec:first-of-type{border-top:0}
+.mdl-h{position:sticky;top:84px;align-self:start;display:flex;flex-direction:column}
+.mdl-h small{font-size:15px;font-weight:600;color:var(--soft)}
+.mdl-h b{font-size:104px;line-height:.95;font-weight:700;letter-spacing:-4px}
+.mdl-h span{margin-top:10px;font-size:13px;color:var(--soft)}
+.mdl-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.mdl{position:relative;display:flex;flex-direction:column;background:var(--tile);border-radius:28px;padding:16px 16px 14px;transition:background .2s,transform .2s}
+.mdl:hover{background:#e9f9b4;transform:translateY(-3px)}
+.mdl-cnt{position:absolute;left:14px;top:14px;z-index:2;background:var(--ink);color:var(--lime);font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 11px}
+.mdl.zero .mdl-cnt{background:#d9d9d3;color:#666}
+.mdl-art{height:250px;display:grid;place-items:end center;padding-top:34px}
+.mdl-art svg{filter:drop-shadow(0 10px 12px rgba(0,0,0,.22));max-width:100%;height:auto}
+.mdl-na{align-self:center;font-size:12.5px;color:var(--soft)}
+.mdl-b{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;margin-top:14px}
+.mdl-b b{display:block;font-size:15px;line-height:1.3;font-weight:600}
+.mdl-b small{display:block;font-size:12.5px;color:var(--soft);margin-top:1px}
+.mdl-go{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:15px;transition:.15s}
+.mdl:hover .mdl-go{background:var(--lime);border-color:var(--lime)}
+@media (max-width:980px){.mdl-sec{grid-template-columns:1fr;gap:16px;padding:26px 0}.mdl-h{position:static;flex-direction:row;align-items:baseline;gap:10px}.mdl-h b{font-size:54px;letter-spacing:-2px}.mdl-h span{margin:0 0 0 auto}.mdl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:981px) and (max-width:1160px){.mdl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.mdl-art{height:200px;padding-top:30px}.mdl-art svg{zoom:.78}.mdl{padding:14px 12px 12px;border-radius:24px}.mdl-b b{font-size:13.5px}.mdl-go{width:30px;height:30px}}
+
+/* ท้ายเว็บ */
+.foot{margin-top:80px;background:var(--ink);color:#cfcfc8;border-radius:32px 32px 0 0;padding:48px 0 28px}
+.foot .g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;font-size:14px}
+.foot h5{color:#fff;font-size:14px;margin-bottom:10px}
+.foot a{display:block;padding:3px 0;color:#bdbdb6}.foot a:hover{color:var(--lime)}
+.foot .logo{color:#fff;margin-bottom:10px}
+.foot .disc{margin-top:30px;border-top:1px solid #333;padding-top:18px;font-size:12.5px;color:#9a9a94;line-height:1.7}
+
+@media (max-width:980px){
+  .wrap{padding:0 18px}
+  .hero{height:520px}.hero h1{font-size:60px;left:26px;top:36px}
+  .hero .copy{left:26px;bottom:28px;max-width:calc(100% - 52px)}.hero .lead{max-width:340px}
+  .float{display:none}
+  .sec{grid-template-columns:1fr;gap:14px;margin-top:52px}h2{font-size:32px}
+  .series,.tiles{grid-template-columns:repeat(2,1fr)}
+  .band{grid-template-columns:1fr;padding:18px}
+  .clips{grid-template-columns:repeat(3,1fr)}
+  .pd{grid-template-columns:1fr}.pd .gal{position:static}
+  .vgrid{grid-template-columns:1fr}
+  .smap{grid-template-columns:repeat(2,1fr)}
+  .foot .g{grid-template-columns:1fr 1fr}
+  .pagehead{padding:26px}.pagehead h1{font-size:38px}
+}
+@media (max-width:980px){.ty{grid-template-columns:1fr;gap:22px}.ty-view{position:static}.ty-stage{height:470px}.ty-stage.duo{height:auto;min-height:470px}.cs-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:640px){.ty-model{display:none}.cs-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}.ty-stage{height:400px}.cs-head h3{font-size:21px}.ty-buy{margin-left:0;width:100%;justify-content:space-between}}
+@media (max-width:640px){
+  .pbar-row{gap:6px}.pf{max-width:none}.parrow{display:none}.pgo{display:none}.pfb{padding-right:10px}.pfb b{font-size:13.5px}.pfb small{font-size:10.5px}
+  .pop{position:fixed;left:12px;right:12px;top:auto;bottom:auto;margin-top:8px;width:auto;min-width:0;max-width:none}
+  .ty-list{grid-template-columns:1fr}
+  .nav{flex-wrap:wrap;gap:10px 14px;padding:14px 0 8px}
+  .menu{order:3;width:100%;margin-left:0;overflow-x:auto;gap:20px;padding-bottom:4px;white-space:nowrap}
+  .cta{margin-left:auto}
+  .hero{height:540px;border-radius:22px}.hero h1{font-size:46px;letter-spacing:-1px}
+  .hero .lead{font-size:14px}
+  .series,.tiles{grid-template-columns:1fr}
+  .clips{grid-template-columns:repeat(2,1fr)}
+  .smap{grid-template-columns:1fr}
+  .foot .g{grid-template-columns:1fr}
+  .pd h1{font-size:26px}
+  .cd div{min-width:54px;font-size:20px}
+  .dl .big{font-size:38px}
+}
+
+/* ===== ส่วนปรับหน้าตา (สกิน B แกลเลอรี) — ธีม: เขียวมะนาว #C5F23A + หมึก #121212 + กระเบื้องเทา + Anuphan + มุมมน ===== */
+
+/* --- แก้บั๊กที่เจอตอนจำลองผู้ใช้ + ชิ้นส่วนร่วม --- */
+.band.two{grid-template-columns:1fr 1fr}                                       /* หน้าโค้ด: เคยใส่ inline style ทับ media query จนกล่องล้นบนมือถือ */
+.crumb a{display:inline-block;padding:5px 0}
+.crumb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dl .off{position:static;display:inline-block;margin:0 0 12px}.dl .lk a{display:inline-block;padding:6px 0}                 /* ป้าย "รอบถัดไป" เคยทับหัวข้อบนจอแคบ */
+.pfb small{font-size:11px}.cd small{font-size:11px}.cs-cur{font-size:11px}
+.tag.mall{background:var(--ink);color:var(--lime)}
+:root{--ok:#0A7440}                                                               /* เขียว "ใส่ได้" เดิมตัดกับพื้นขาวแค่ 4.4:1 */
+.parrow{color:#6f6f69}
+.vch.dim .st{color:#6b6b6b}
+.clip b{color:#8f8f88}
+.smap .n.done code{color:#4d5c12}
+.logo i{color:#121212}                                                            /* ตัว ฿ ในวงสีมะนาวเคยเป็นสีขาวบนมะนาวในส่วนท้ายเว็บ (ตัดกันแค่ 1.3:1) */
+.topbar{display:flex;align-items:center;justify-content:center;gap:6px 22px;flex-wrap:wrap}
+.tb-msg a{margin-left:8px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-size:12.5px;font-weight:600;background:var(--tile);border-radius:999px;padding:5px 13px}
+.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--lime-d)}
+.tile h4{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tile .ft p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .ft>div{min-width:0}
+.chip i{font-style:normal;font-size:11.5px;opacity:.6}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.pd-head h1{overflow-wrap:anywhere}
+.noimg{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:8px;color:#b3b3ab;font-size:12px;background:var(--tile)}
+.tile .im,.gal{position:relative}
+.pd-head h1.long{font-size:22px!important;line-height:1.4;letter-spacing:0!important}
+.pd-buy{display:flex;align-items:flex-end;justify-content:space-between;gap:14px 20px;flex-wrap:wrap;margin:6px 0 16px;padding:16px 0;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+.pd-price small{display:block;font-size:12.5px;color:var(--soft)}
+.pd-price b{font-size:44px;line-height:1.05;letter-spacing:-1.5px;font-weight:700}
+.pd-price b span{font-size:24px;color:var(--soft)}
+.pd-price em{display:block;font-style:normal;font-size:12.5px;color:var(--soft);margin-top:2px}
+.pd-buy .btn{padding:14px 26px;font-size:15.5px}
+.calc-q{display:flex;justify-content:space-between;align-items:center}
+.calc-c{margin:6px 0}
+.tb-chips{display:flex;flex-wrap:wrap;gap:6px}
+.chk{display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer}
+.chk input{accent-color:var(--ink);width:17px;height:17px}
+.buybar{display:none}
+.menu{scrollbar-width:none}.menu::-webkit-scrollbar{display:none}
+@media (max-width:700px){
+  .foot a{padding:9px 0}
+  .tb-msg a,.tb-r{display:none}.tb-msg{font-size:12.5px}
+  .buybar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:70;background:var(--ink);color:#fff;border-radius:999px;padding:7px 7px 7px 20px;align-items:center;justify-content:space-between;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+  .buybar small{display:block;font-size:11px;color:#a9a9a2;line-height:1.1}.buybar b{font-size:20px;color:var(--lime);line-height:1.2}
+  body[data-page=product]{padding-bottom:84px}
+  .menu{padding-right:28px;-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent)}
+  .ty-opts .sw,.sw{width:32px;height:32px}
+  .pagehead{padding:22px}
+  .band.two{grid-template-columns:1fr}
+  .chip,.ty-flt button{padding:8px 14px}
+  .crumb a{padding:8px 0}
+}
+
+/* ===== หน้าตาเว็บ (สกิน B แกลเลอรี: โปร่ง ตัวใหญ่ รูปเป็นพระเอก — แบบ Apple / Nomad / CASETiFY หน้าสินค้า) ===== */
+.topbar{background:var(--lime);color:var(--ink)}
+.topbar b{color:var(--ink)}
+.nav{padding:22px 0 18px}
+.menu{margin:0 auto;gap:34px}
+.menu a.on{border-color:var(--lime-d)}
+.pbar{background:rgba(255,255,255,.9);border-bottom:1px solid var(--line)}
+.pfb{background:#fff;border-color:var(--line)}
+.sec{margin:104px 0 36px}
+h2{font-size:52px;letter-spacing:-1.6px;font-weight:700;line-height:1.08}
+.hB{text-align:center;padding:60px 20px 34px;border-radius:44px;background:radial-gradient(ellipse at 50% 78%,var(--tile) 0,#fff 72%);display:flex;flex-direction:column;align-items:center;gap:18px;overflow:hidden}
+.hB .eyebrow{align-self:center;background:#fff;border:1.5px solid var(--line)}
+.hB h1{font-size:clamp(46px,7vw,96px);line-height:.98;letter-spacing:-3.5px;font-weight:700}
+.hB h1 em{font-style:normal;background:var(--lime);border-radius:.2em;padding:0 .14em}
+.hB .lead{max-width:540px;color:#555;font-size:16px}
+.hB .acts{justify-content:center}
+.hB-art{display:flex;justify-content:center;align-items:flex-end;height:330px;margin-top:6px}
+.hb-ph{display:block;margin:0 -26px}
+.hb-ph svg{filter:drop-shadow(0 22px 26px rgba(0,0,0,.22));display:block}
+.hb-ph0{transform:rotate(-9deg) translateY(26px);z-index:1}
+.hb-ph1{z-index:3}
+.hb-ph2{transform:rotate(9deg) translateY(26px);z-index:2}
+.hB .models{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:8px}
+.hB .models a{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px}
+.hB .models a.on{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.col{position:relative;background:var(--tile);border-radius:30px;padding:26px 26px 24px;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;transition:background .2s,transform .2s}
+.col:hover{background:var(--lime);transform:translateY(-3px)}
+.col b{font-size:30px;font-weight:700;letter-spacing:-.8px;line-height:1.1}
+.col small{font-size:13.5px;color:#666;margin-top:4px}
+.col .go{position:absolute;right:20px;top:20px;width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center}
+/* กล่องเคสเล็กลง (4 คอลัมน์) และโชว์รูปทั้งใบ — รูปจากร้านมีโลโก้/ข้อความรอบขอบ ห้ามตัด */
+.tiles{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 18px}
+.tile .im{aspect-ratio:1/1;border-radius:22px;background:#fff;border:1.5px solid var(--line)}
+.tile .im img,.cs-im img,.pd .gal img,.feat .im img{object-fit:contain}
+.tile .im{padding:6px}.tile .im img{border-radius:16px}
+.badge{box-shadow:0 0 0 1.5px var(--line);left:10px;top:10px;padding:4px 10px;font-size:11.5px}
+.pd .gal{background:#fff;border:1.5px solid var(--line)}
+.cs-im{background:#fff;border:1.5px solid var(--line)}
+.tile .ft{padding:12px 4px 0}
+.tile h4{font-size:15px;line-height:1.35}
+.tile .arw{display:none}
+.tile .tags{padding:8px 6px 0}
+.rows{padding:0 6px}
+.prow.best .v{font-size:20px;font-weight:700}
+.fit{margin:8px 6px 0}
+.vstrip{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:104px}
+.vstrip .dl{border-radius:32px;padding:30px}
+.vstrip .dl:not(.lime){background:var(--tile)}
+.pagehead{background:transparent;padding:10px 0 6px;margin-bottom:22px;border-radius:0}
+.pagehead h1{font-size:76px;letter-spacing:-2.5px}
+.pagehead p{max-width:380px}
+.mp{display:block}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:0 0 30px;padding:14px 0;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line)}
+.tb-h{display:none}
+.tb-g{display:flex;align-items:center;gap:10px}
+.tb-sort{margin-left:auto}
+/* หน้าสินค้า: รูปใหญ่ติดจอซ้าย · ขวาเป็นแถบพับ (accordion) */
+.pd{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:52px;align-items:start}
+.pd-c1{position:sticky;top:84px}
+.pd-c1 .gal{position:relative;border-radius:40px}
+.pd-head h1{font-size:40px;letter-spacing:-1px}
+.acc{border:0;border-top:1.5px solid var(--ink);border-radius:0;padding:0;margin:0}
+.acc:last-of-type{border-bottom:1.5px solid var(--ink)}
+.acc>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:18px 2px}
+.acc>summary::-webkit-details-marker{display:none}
+.acc>summary h3{margin:0;font-size:20px}
+.acc>summary::after{content:'+';font-size:26px;line-height:1;color:var(--soft)}
+.acc[open]>summary::after{content:'–'}
+.acc-b{padding:0 2px 22px}
+.pd-cta{margin-top:26px}
+.pd-cta .btn{padding:15px 30px;font-size:16px}
+.foot{background:var(--tile);color:#555;border-radius:44px 44px 0 0}
+.foot h5,.foot .logo{color:var(--ink)}
+.foot a{color:#555}.foot a:hover{color:var(--ink)}
+.foot .disc{border-color:#d9d9d3;color:#5c5c58}
+.foot .logo i{color:var(--ink)}
+@media (max-width:1180px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:980px){
+  h2{font-size:38px}
+  .cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 16px}
+  .vstrip{grid-template-columns:1fr}
+  .pd{grid-template-columns:1fr;gap:28px}
+  .pd-c1{position:static}
+  .pagehead h1{font-size:48px}
+}
+@media (max-width:700px){
+  .sec{margin:64px 0 24px}
+  .hB{padding:34px 14px 22px;border-radius:30px}
+  .hB-art{height:250px}
+  .hb-ph{margin:0 -34px;zoom:.62}
+  .col{min-height:130px;padding:18px}.col b{font-size:21px}
+  .tile .im{border-radius:24px;aspect-ratio:1/1}
+  .tb-chips{padding-right:20px}
+  .pd-head h1{font-size:28px;letter-spacing:-.4px}
+  .pd-price b{font-size:38px}
+  .tile h4{font-size:14px}
+  .prow.best .v{font-size:17px}
+  .tb-g{width:100%}.tb-sort{margin-left:0}
+  .tb-chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.tb-chips .chip{flex:none}
+  .pagehead h1{font-size:38px}
+  .clips{grid-template-columns:repeat(2,1fr)}.clips .clip:nth-child(n+3){display:none}
+}
+
+/* ===== หน้าเลือกรุ่น — 4 รูปแบบ (ชั่วคราวระหว่างเลือก) ===== */
+.mv-bar{display:flex;align-items:center;gap:4px;margin:0 0 24px;padding:5px 5px 5px 18px;background:var(--ink);color:#fff;border-radius:999px;width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.mv-bar::-webkit-scrollbar{display:none}
+.mv-bar span{font-size:12px;color:#a9a9a2;margin-right:8px;white-space:nowrap}
+.mv-bar a{color:#e8e8e2;font-size:13px;padding:8px 15px;border-radius:999px;white-space:nowrap}
+.mv-bar a b{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#3a3a37;font-size:11px;margin-right:4px}
+.mv-bar a.on{background:var(--lime);color:var(--ink);font-weight:600}.mv-bar a.on b{background:var(--ink);color:var(--lime)}
+.m-dots{display:flex;gap:7px;justify-content:center;margin:10px 0 2px}
+.m-dots i{display:block;width:13px;height:13px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px #fff,0 0 0 2.5px var(--line)}
+/* 1 · เทียบขนาดจริง */
+.m1-sec{padding:30px 0 12px;border-top:1px solid var(--line);scroll-margin-top:84px}
+.mdl-nav+.m1-sec{border-top:0}
+.m1-h{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.m1-h h2{font-size:40px;letter-spacing:-1.2px}.m1-h span{font-size:13px;color:var(--soft)}
+.m1-row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 2px 18px;scrollbar-width:thin}
+.m1-c{flex:none;width:236px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--tile);border-radius:30px;padding:18px 14px 20px;scroll-snap-align:start;transition:background .2s,transform .2s}
+.m1-c:hover{background:#e9f9b4;transform:translateY(-3px)}
+.m1-art{height:272px;display:flex;align-items:flex-end;justify-content:center}
+.m1-art svg{filter:drop-shadow(0 10px 12px rgba(0,0,0,.22))}
+.m1-scr{font-size:58px;font-weight:700;letter-spacing:-2px;line-height:1;margin-top:18px}
+.m1-scr sup{font-size:.38em;vertical-align:top;margin-left:2px;letter-spacing:0}
+.m1-c b{font-size:15px;margin-top:8px}
+.m1-cnt{margin-top:10px;background:var(--ink);color:var(--lime);font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 11px}
+/* 2 · ค้นหาแล้วเลือก */
+.m2-bar{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:14px;background:var(--tile);border-radius:28px}
+.m2-q{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:0 20px;flex:1 1 320px;height:52px;color:var(--soft)}
+.m2-q:focus-within{border-color:var(--ink);color:var(--ink)}
+.m2-q input{border:0;outline:0;flex:1;font-size:16px;background:transparent;min-width:0;color:var(--ink);height:100%}
+.m2-chips{display:flex;gap:6px;flex-wrap:wrap}.m2-chips .chip{background:#fff}.m2-chips .chip.on{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+.m2-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.m2-r{display:grid;grid-template-columns:62px minmax(0,1fr) auto 36px;gap:14px;align-items:center;padding:8px 16px 8px 14px;background:#fff;border:1.5px solid var(--line);border-radius:22px;transition:border-color .15s,background .15s}
+.m2-r:hover{border-color:var(--ink);background:#f8fde6}
+.m2-t{height:98px;display:grid;place-items:center;overflow:hidden}
+.m2-n b{display:block;font-size:16px}.m2-n small{display:block;font-size:12.5px;color:var(--soft);margin-top:1px}
+.m2-c{font-size:12px;font-weight:700;background:var(--ink);color:var(--lime);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.m2-r.zero .m2-c{background:#d9d9d3;color:#555}
+.m2-go{width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:14px}
+.m2-r:hover .m2-go{background:var(--lime);border-color:var(--lime)}
+.m2-list .empty{grid-column:1/-1}
+/* 3 · เลือกทีละขั้น */
+.m3-lab{font-size:15px;font-weight:600;display:flex;align-items:center;gap:10px;margin:28px 0 14px}
+.m3-lab:first-child{margin-top:6px}
+.m3-lab b{width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:13px}
+.m3-ser{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.m3-ser button{border:1.5px solid var(--line);background:#fff;border-radius:26px;padding:16px 8px 14px;cursor:pointer;display:flex;flex-direction:column;align-items:center;font:inherit;transition:.15s}
+.m3-ser button b{font-size:58px;line-height:1;font-weight:700;letter-spacing:-2px}
+.m3-ser button small{font-size:12.5px;color:var(--soft);margin-top:4px}
+.m3-ser button:hover{border-color:var(--ink)}
+.m3-ser button.on{background:var(--lime);border-color:var(--lime)}.m3-ser button.on small{color:#3f4e0d}
+.m3-panel{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,270px));gap:14px}
+.m3-c{display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--tile);border-radius:32px;padding:22px 16px 18px;transition:background .2s,transform .2s}
+.m3-c:hover{background:#e9f9b4;transform:translateY(-3px)}
+.m3-art{height:290px;display:flex;align-items:flex-end}
+.m3-art svg{filter:drop-shadow(0 10px 12px rgba(0,0,0,.22))}
+.m3-b{margin-top:14px}.m3-b b{display:block;font-size:17px}.m3-b small{font-size:13px;color:var(--soft)}
+.m3-go{margin-top:14px;background:var(--ink);color:var(--lime);border-radius:999px;padding:9px 22px;font-weight:600;font-size:14px}
+/* 4 · ตารางเทียบรุ่น */
+.m4{border:1.5px solid var(--line);border-radius:26px;overflow:hidden;background:#fff}
+.m4-hd,.m4-r{display:grid;grid-template-columns:minmax(210px,2.2fr) .7fr 1.4fr 1.5fr 1fr 36px;gap:14px;align-items:center;padding:0 20px}
+.m4-hd{background:var(--tile);height:52px;font-size:12.5px;font-weight:600;color:var(--soft)}
+.m4-hd button{border:0;background:transparent;font:inherit;font-weight:600;color:inherit;cursor:pointer;text-align:left;padding:14px 10px;min-width:44px}
+.m4-hd button.on{color:var(--ink)}.m4-hd button i{font-style:normal}
+.m4-r{padding-top:8px;padding-bottom:8px;border-top:1px solid var(--line);font-size:14px;transition:background .15s}
+.m4-r:hover{background:#f8fde6}
+.m4-n{display:flex;align-items:center;gap:14px;min-width:0}
+.m4-t{width:58px;height:96px;display:grid;place-items:center;overflow:hidden;flex:none}
+.m4-n b{display:block;font-size:15px}.m4-n small{color:var(--soft);font-size:12px}
+.m4-r strong{font-size:22px;letter-spacing:-.5px}
+.m4-r em{font-style:normal;background:var(--ink);color:var(--lime);font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.m4-r.zero em{background:#d9d9d3;color:#555}
+.m4-go{width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:14px}
+.m4-r:hover .m4-go{background:var(--lime);border-color:var(--lime)}
+@media (max-width:1100px){.m2-list{grid-template-columns:1fr}}
+@media (max-width:900px){
+  .m3-ser{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .m4-hd{display:flex;gap:18px;padding:0 16px}.m4-hd span{display:none}
+  .m4-r{grid-template-columns:1fr 1fr;gap:6px 14px;padding:14px 16px}
+  .m4-n{grid-column:1/-1}.m4-go{display:none}
+  .m4-r [data-l]::before{content:attr(data-l);display:block;font-size:11px;color:var(--soft);font-weight:400}
+}
+@media (max-width:700px){
+  .mv-bar{padding-left:14px}.mv-bar span{display:none}
+  .m1-h h2{font-size:30px}.m1-c{width:200px}.m1-art{height:240px;zoom:.88}
+  .m2-r{grid-template-columns:52px minmax(0,1fr) auto;gap:10px;padding:8px 12px}.m2-go{display:none}.m2-t{height:88px}
+  .m3-ser button b{font-size:44px}
+  .m3-panel{grid-template-columns:repeat(2,minmax(0,1fr))}.m3-art{height:230px;zoom:.8}
+}
+
+/* ---------- หน้า อันดับเคส — แถบหมวด + แถบกรองซ้าย + กริดแน่น (ผู้ใช้เลือก 2026-11-06 · docs/brand-picker-options.html แบบ 1) ---------- */
+.rk-cats{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.rk-cat{display:inline-flex;align-items:center;gap:9px;background:var(--tile);border-radius:999px;padding:6px 16px 6px 6px;font-size:14.5px;font-weight:500;color:var(--ink);white-space:nowrap}
+.rk-cat svg{width:30px;height:30px;flex:none;background:#fff;border-radius:50%;padding:5px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rk-cat small{font-size:12px;color:var(--soft)}
+.rk-cat.on{background:var(--ink);color:#fff}
+.rk-cat.on svg{background:var(--lime);stroke:var(--ink)}
+.rk-cat.on small{color:var(--lime);font-weight:600}
+.rk-cat.soon{color:#8d8d88;cursor:default}
+.rk-cat.soon small{background:#fff;border-radius:999px;padding:1px 8px;font-size:11px}
+.rk-lay{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;align-items:start}
+.rk-side{background:var(--tile);border-radius:24px;padding:16px 14px;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;scrollbar-width:thin}
+.rk-fg{padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.rk-fg:last-child{border:0;margin:0;padding:0}
+.rk-fg h5{font-size:12.5px;font-weight:600;color:var(--soft);margin:0 4px 8px}
+.rk-brand{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.rk-brand button{display:flex;flex-direction:column;align-items:center;background:#fff;border:2px solid transparent;border-radius:18px;padding:12px 6px 10px;cursor:pointer;font:inherit;color:var(--ink);transition:.15s}
+.rk-brand button:hover{border-color:var(--line)}
+.rk-brand button.on{background:var(--lime);border-color:var(--ink)}
+.rk-art{height:96px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.rk-art svg{height:92px!important;width:auto!important}
+.rk-brand b{font-size:15px;font-weight:700;line-height:1.2}
+.rk-brand small{font-size:11.5px;color:var(--soft)}
+.rk-brand button.on small{color:#3b4a0a}
+/* หน้าสินค้า: ปุ่มกลับตัวใหญ่กดง่าย + breadcrumb บรรทัดเดียว */
+.pd-nav{display:flex;align-items:center;gap:16px;padding:6px 0 18px;min-width:0}
+.pd-nav .crumb{padding:0;flex:1;min-width:0}
+.backbtn{flex:none;display:inline-flex;align-items:center;gap:10px;min-height:44px;background:var(--ink);color:#fff;border-radius:999px;padding:6px 20px 6px 6px;font-size:14.5px;font-weight:600;white-space:nowrap;transition:.15s}
+.backbtn i{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-size:17px}
+.backbtn:hover{background:#333}
+.bb-back{flex:none;width:44px;height:44px;border-radius:50%;background:#2c2c2a;color:#fff;display:grid;place-items:center;font-size:19px}
+.buybar>div{margin:0 auto 0 12px}
+.pd-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pf{min-width:0}.pfb>span:not(.pi){min-width:0}.pfb b{overflow:hidden;text-overflow:ellipsis}   /* ชื่อรุ่น Galaxy ยาว ("Galaxy S25 Ultra") เคยดันแถบเลือกรุ่นล้นจอมือถือ */.hB .eyebrow{margin-bottom:10px}
+.hB h1{line-height:1.08}
+@media (max-width:700px){.pd-nav{flex-direction:column;align-items:flex-start;gap:8px}.pd-nav .crumb{width:100%}.buybar{padding-left:7px}}
+body[data-page=model] .rk-side{top:88px;max-height:calc(100vh - 104px)}   /* หลบแถบเลือกรุ่นที่ติดบนจอ (สูง ~71px) */
+.rk-buyphone{display:flex;align-items:center;gap:10px;margin-top:8px;background:#fff;border:1.5px dashed #c9c9c3;border-radius:14px;padding:9px 12px;color:#77776f}
+.rk-buyphone svg{width:26px;height:26px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+.rk-buyphone b{display:block;font-size:13px;font-weight:600;color:var(--ink);line-height:1.3}
+.rk-buyphone small{font-size:11.5px}
+.rk-me{display:flex;flex-direction:column;align-items:center;background:var(--lime);border:2px solid var(--ink);border-radius:18px;padding:12px 8px 10px;color:var(--ink)}
+.rk-me b{font-size:15px;font-weight:700;line-height:1.2;text-align:center}
+.rk-me small{font-size:12px;text-decoration:underline;text-underline-offset:3px;color:#3b4a0a}
+.rk-me:hover small{color:var(--ink)}
+.rg-fit{display:inline-block;margin-top:7px;font-size:11px;font-weight:600;border-radius:999px;padding:1px 8px}
+.rg-fit.yes{background:#E5F6EC;color:var(--ok)}
+.rg-fit.named{background:#E8F0FE;color:#1D4ED8}
+.rg-fit.maybe{background:#FEF3C7;color:var(--warn)}
+.rg-fit+h4{margin-top:4px}
+.nav+.rk-cats{margin:0 0 14px}
+.rk-opts{display:flex;flex-direction:column;gap:2px}
+.rk-opt{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;border-radius:12px;padding:6px 8px;font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer;text-align:left}
+.rk-opt:hover{background:#fff}
+.rk-opt .bx{width:18px;height:18px;flex:none;border:1.7px solid #9a9a95;border-radius:50%;background:#fff}
+.rk-opt.on{background:#fff;font-weight:600}
+.rk-opt.on .bx{border-color:var(--ink);background:var(--ink);box-shadow:inset 0 0 0 3px #fff}
+.rk-opt .n{margin-left:auto;font-size:11.5px;font-weight:700;background:#fff;border-radius:999px;padding:1px 8px;color:var(--soft)}
+.rk-opt:hover .n{background:var(--tile)}
+.rk-opt.on .n{background:var(--ink);color:var(--lime)}
+.rk-stars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.rk-stars button{background:#fff;border:0;border-radius:999px;padding:6px 0;font:inherit;font-size:13px;font-weight:500;color:var(--ink);cursor:pointer}
+.rk-stars button.on{background:var(--ink);color:#fff}
+.rk-main{min-width:0}
+.rk-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 8px}
+.rk-pills{display:flex;gap:6px;flex-wrap:wrap}
+.rk-fp{display:inline-flex;align-items:center;gap:8px;background:var(--lime);border:0;border-radius:999px;padding:5px 7px 5px 14px;font:inherit;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer}
+.rk-fp i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:10px}
+.rk-sorts{margin-left:auto;display:flex;gap:2px;background:var(--tile);border-radius:999px;padding:4px}
+.rk-sorts button{background:none;border:0;border-radius:999px;padding:6px 14px;font:inherit;font-size:13.5px;color:var(--ink);cursor:pointer;white-space:nowrap}
+.rk-sorts button:hover{background:#fff}
+.rk-sorts button.on{background:var(--ink);color:#fff;font-weight:600}
+.rk-main .rg-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:20px 12px}
+@media (max-width:1100px){.rk-main .rg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:980px){
+  .rk-lay{grid-template-columns:minmax(0,1fr);gap:16px}
+  .rk-side{position:static;max-height:none;overflow:visible;padding:12px}
+  .rk-fg{padding-bottom:10px;margin-bottom:10px}
+  .rk-art{height:70px}.rk-art svg{height:66px!important}
+  .rk-me{display:grid;grid-template-columns:auto 1fr;align-content:center;justify-items:start;column-gap:14px;padding:8px 16px}
+  .rk-me .rk-art{grid-row:1/3;margin:0}.rk-me b{align-self:end}.rk-me small{align-self:start}
+  .rk-opts{flex-direction:row;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -12px;padding:0 12px}
+  .rk-opt{flex:none;width:auto;background:#fff;border-radius:999px;padding:6px 8px 6px 14px;white-space:nowrap}
+  .rk-opt .bx{display:none}
+  .rk-opt.on{background:var(--ink);color:#fff}
+  .rk-opt.on .n{background:var(--lime);color:var(--ink)}
+  .rk-opt .n,.rk-opt:hover .n{background:var(--tile)}
+  .rk-main .rg-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 10px}
+}
+@media (max-width:700px){
+  .rk-cats{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}
+  .rk-cat{flex:none}
+  .rk-sorts{margin-left:0;width:100%}
+  .rk-sorts button{flex:1;padding:6px 4px}
+}
+@media (max-width:420px){.rk-main .rg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.rk-note{font-size:13px;color:var(--soft);margin:0 0 14px}
+.rk-note b{color:var(--ink)}
+.rk-how{margin:30px 0 10px;background:var(--tile);border-radius:20px;padding:16px 22px;font-size:14px}
+.rk-how summary{cursor:pointer;font-weight:600}
+.rk-how p{margin-top:10px;color:var(--soft);line-height:1.6}
+
+/* 1 · กริดแน่น */
+.rg-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 12px}
+.rg-c{display:block;min-width:0}
+.rg-im{position:relative;display:block;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:#fff;border:1.5px solid var(--line);transition:.15s}
+.rg-c:hover .rg-im{border-color:var(--ink)}
+.rg-im img{width:100%;height:100%;object-fit:contain;padding:4px}
+.rg-n{position:absolute;left:8px;top:8px;min-width:26px;height:26px;padding:0 7px;border-radius:999px;background:var(--ink);color:#fff;font:700 12.5px/26px Anuphan,sans-serif;font-style:normal;text-align:center}
+.rg-c:nth-child(-n+3) .rg-n{background:var(--lime);color:var(--ink)}
+.rg-s{position:absolute;left:8px;bottom:8px;background:#fff;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700;box-shadow:0 0 0 1.5px var(--line)}
+.rg-s.na{font-weight:500;color:var(--soft)}
+.rg-c h4{font-size:13px;font-weight:500;line-height:1.35;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rg-c p{font-size:12.5px;color:var(--soft);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rg-c p b{color:var(--ink);font-size:14px}
+
+/* 2 · ตารางกะทัดรัด */
+.rt{border:1.5px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.rt-hd,.rt-r{display:grid;grid-template-columns:44px minmax(0,1fr) 78px 78px 92px 84px;gap:10px;align-items:center;padding:0 16px}
+.rt-hd{background:var(--tile);height:42px;font-size:12.5px;color:var(--soft);font-weight:600}
+.rt-hd button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;text-align:left;padding:0}
+.rt-hd button:hover,.rt-hd button.on{color:var(--ink)}
+.rt-r{min-height:54px;padding-top:5px;padding-bottom:5px;border-top:1px solid var(--line);font-size:13.5px;transition:background .12s}
+.rt-r:hover{background:#FAFAF7}
+.rt-n{font-weight:700;color:#9a9a92}
+.rt-r:nth-of-type(-n+3) .rt-n{color:var(--ink)}
+.rt-p{display:flex;align-items:center;gap:12px;min-width:0}
+.rt-im{position:relative;flex:none;width:42px;height:42px;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.rt-im img{width:100%;height:100%;object-fit:contain}
+.rt-im .noimg small,.rg-im .noimg small,.rp-t .noimg small,.rp-im .noimg small{display:none}
+.rt-im .noimg svg{width:18px;height:18px}
+.rt-t{min-width:0}
+.rt-t b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rt-t small{color:var(--soft);font-size:12px}
+.rt-r strong{font-size:15px}
+
+/* 3 · โพเดียม + 2 คอลัมน์ */
+.rp-pod{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:14px;align-items:end;margin-bottom:18px}
+.rp-p{display:flex;flex-direction:column;background:var(--tile);border-radius:22px;padding:12px;min-width:0;transition:.15s;border:1.5px solid transparent}
+.rp-p:hover{border-color:var(--ink)}
+.rp-p1{background:var(--lime);order:2;padding-bottom:16px}.rp-p2{order:1}.rp-p3{order:3}
+.rp-im{position:relative;display:block;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:#fff}
+.rp-im{aspect-ratio:auto;height:150px}.rp-p1 .rp-im{height:190px}
+.rp-im img{width:100%;height:100%;object-fit:contain}
+.rp-im i{position:absolute;left:10px;top:10px;width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--lime);font:700 15px/32px Anuphan,sans-serif;font-style:normal;text-align:center}
+.rp-p h4{font-size:14px;font-weight:600;line-height:1.35;margin-top:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rp-p>p{font-size:12.5px;color:var(--soft);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp-p1>p{color:#3b4a0a}
+.rp-f{display:flex;justify-content:space-between;align-items:flex-end;margin-top:8px}
+.rp-sc b{display:block;font-size:26px;line-height:1;letter-spacing:-1px}
+.rp-sc small{font-size:11.5px;color:var(--soft)}
+.rp-p1 .rp-sc small{color:#3b4a0a}
+.rp-pr{font-size:17px}
+.rp-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}
+.rp-r{display:grid;grid-template-columns:30px 52px minmax(0,1fr) 46px 64px;gap:10px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:6px 12px 6px 10px;transition:.15s}
+.rp-r:hover{border-color:var(--ink)}
+.rp-n{font-weight:700;color:#9a9a92;text-align:center}
+.rp-t{position:relative;width:52px;height:52px;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.rp-t img{width:100%;height:100%;object-fit:contain}
+.rp-t .noimg svg{width:18px;height:18px}
+.rp-i{min-width:0}
+.rp-i b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-weight:500;font-size:13px;line-height:1.3}
+.rp-i small{display:block;font-size:11.5px;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp-s{text-align:center;font-size:15px}.rp-s small{font-size:11px;color:var(--soft)}
+.rp-x{text-align:right;font-weight:700;font-size:14px}
+
+/* 4 · แยกตามสไตล์ */
+.rs-sec{margin:0 0 26px}
+.rs-h{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.rs-h h3{font-size:22px;font-weight:700;letter-spacing:-.5px}
+.rs-h span{font-size:13px;color:var(--soft)}
+.rs-h .chip{margin-left:auto}
+.rs-row{display:flex;gap:12px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity}
+.rs-row .rg-c{flex:none;width:158px;scroll-snap-align:start}
+
+@media (max-width:1100px){
+  .rg-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .rp-list{grid-template-columns:1fr}
+}
+@media (max-width:800px){
+  .rg-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 10px}
+  .rt-hd{grid-template-columns:30px minmax(0,1fr) 70px 70px;padding:0 12px}
+  .rt-hd button[data-k=rating],.rt-hd button[data-k=sold]{display:none}
+  .rt-r{grid-template-columns:30px minmax(0,1fr) 70px 70px;padding:6px 12px}
+  .rt-r>[data-l=เรตติ้ง],.rt-r>[data-l=ขายแล้ว]{display:none}
+  .rp-pod{grid-template-columns:1fr;gap:10px}
+  .rp-p1{order:0}.rp-p2{order:1}.rp-p3{order:2}
+  .rp-p{flex-direction:row;flex-wrap:wrap;align-items:center;gap:0 12px}
+  .rp-im,.rp-p1 .rp-im{width:86px;height:86px}
+  .rp-p h4,.rp-p>p{flex:1 1 calc(100% - 100px);margin-top:0}
+  .rp-f{flex:1 1 100%;margin-top:8px}
+}
+@media (max-width:700px){
+  .rs-row .rg-c{width:136px}
+}
+@media (max-width:420px){.rg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* อันดับเคส: ย่อส่วนหัวให้เห็นรายการเร็วขึ้น */
+body[data-page=ranking] .pagehead{padding:12px 0 0;margin-bottom:16px;align-items:center}
+body[data-page=ranking] .pagehead h1{font-size:46px;letter-spacing:-1.5px}
+body[data-page=ranking] .pagehead p{max-width:420px;font-size:13px}
+body[data-page=ranking] .mv-bar{margin-bottom:12px}
+@media (max-width:700px){body[data-page=ranking] .pagehead h1{font-size:34px}body[data-page=ranking] .pagehead p{display:none}}
+/* Samsung: การ์ดเลือกตระกูลในหน้าเลือกรุ่น */
+.gx-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.gx-c{display:flex;flex-direction:column;gap:2px;background:var(--tile);border-radius:18px;padding:18px 20px;border:1.5px solid transparent;transition:.15s}
+.gx-c:hover{border-color:var(--ink)}
+.gx-c.all{background:var(--ink);color:#fff}
+.gx-c b{font-size:18px;font-weight:700}
+.gx-c small{font-size:13px;color:var(--soft)}
+.gx-c.all small{color:var(--lime)}
+
+/* ราคาเครื่องรุ่นท็อป (หน้าแรก) */
+.dvs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin:18px 0 40px}
+.dv{background:var(--tile);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.dv-art{display:flex;justify-content:center;align-items:center;height:210px;background:#fff;border-radius:16px;overflow:hidden}
+.dv-art svg{height:180px;width:auto;max-width:100%}
+.dv-i{display:flex;flex-direction:column;gap:8px;min-width:0}
+.dv-b{align-self:flex-start;font-size:11.5px;font-weight:600;background:#fff;border-radius:999px;padding:3px 10px}
+.dv h4{font-size:19px;font-weight:600;line-height:1.25}
+.dv-p small{display:block;font-size:12px;color:var(--soft)}
+.dv-p b{font-size:28px;font-weight:700;letter-spacing:-.5px}
+.dv-go{justify-content:center;text-align:center}
+.dv-o{list-style:none;border-top:1px solid var(--line);margin-top:4px}
+.dv-o li a{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:8px 0;border-bottom:1px solid var(--line)}
+.dv-o li a:hover span{text-decoration:underline}
+.dv,.dv *{overflow-wrap:anywhere}
+@media (max-width:480px){.hB h1{font-size:clamp(28px,9vw,42px);letter-spacing:-1.5px}.hB h1 em{white-space:nowrap}}
+@media (max-width:420px){.dv{padding:14px}.dv-art{height:170px}.dv-art svg{height:145px}.dv-p b{font-size:24px}}
+
+/* มือถือ: ปุ่มใส่/ไม่ใส่เคสไม่ทับเครื่อง (อยู่กลางบน เวทีสูงตามเครื่อง) · สีเคสใหญ่กดง่าย อยู่ใต้ภาพเครื่อง */
+@media (max-width:640px){
+  /* เรียงเป็นแนวตั้งตามลำดับ: ปุ่มใส่/ไม่ใส่ → ภาพเครื่อง → ป้ายเตือน (ไม่ใช้ absolute บนมือถือ จึงทับกันไม่ได้ทุกขนาดจอ/ทุกรุ่น) */
+  .ty-stage,.box .ty-stage{height:auto;min-height:0;padding:12px 0 16px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .ty-stage.duo{padding:12px 0 0;min-height:0}
+  .ty-duo{padding:0 6px 12px}
+  .ty-tog{position:static;transform:none;white-space:nowrap;flex:none}
+  .ty-badge{position:static;transform:none;flex:none;max-width:calc(100% - 24px);text-align:center}
+  .ty-stage.off .ty-case{transform:translateY(-3%) scale(1.02)}
+  .ty-tog button{padding:9px 18px;font-size:14px;min-height:40px}
+  .ty-opts{flex-direction:column;align-items:stretch;gap:10px;padding:12px 14px}
+  .ty-og{justify-content:space-between;gap:12px}
+  .ty-og>span{flex:none;font-size:13px}
+  .ty-og>div{gap:10px;justify-content:flex-end}
+  .ty-opts .sw,.sw{width:38px;height:38px;border-width:3px}
+  .ty-view{padding:10px}
+}
+/* มือถือ: หน้าลองทาบ — หัวเรื่องเล็กลงให้ภาพเครื่องโผล่ในจอแรก · ปุ่มเปิดคำอธิบายกดง่าย */
+@media (max-width:640px){
+  body[data-page=tryon] .pagehead{margin-bottom:12px;padding-top:4px}
+  body[data-page=tryon] .pagehead h1{font-size:30px;letter-spacing:-1px}
+  body[data-page=tryon] .pagehead p{font-size:13px}
+  body[data-page=tryon] .crumb{display:none}
+  .rk-how summary{min-height:44px;display:flex;align-items:center}
+}
+@media (max-width:360px){
+  .ty-tog button{padding:8px 13px;font-size:13px}
+  .ty-opts .sw,.sw{width:34px;height:34px}
+}
+@media (max-width:980px) and (min-width:641px){.ty-opts .sw{width:34px;height:34px}.ty-tog button{padding:8px 16px;font-size:13.5px}}
+
+/* หน้าอุปกรณ์เสริม: ตัวกรอง + รายละเอียด */
+.af{display:flex;flex-direction:column;gap:10px;margin:6px 0 10px}
+.af-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.af-l{font-size:13px;font-weight:600;color:var(--soft);min-width:72px}
+.af-one{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:32px;margin:18px 0 40px}
+.af-im{border:1.5px solid var(--line);border-radius:24px;overflow:hidden;background:#fff;aspect-ratio:1/1}
+.af-im img{width:100%;height:100%;object-fit:cover;display:block}
+.af-info h1{font-size:26px;line-height:1.3;margin:8px 0}
+.af-info h3{margin:18px 0 4px}
+.af-info .note{margin:8px 0}
+@media(max-width:760px){.af-one{grid-template-columns:1fr;gap:18px}.af-l{min-width:100%}}
+.af-info .af-sec{margin-top:22px;padding-top:20px;border-top:1.5px solid var(--line)}
+.af-info .af-sec h3{margin:0 0 12px;font-size:19px}
+.af-info .af-sec p{margin:0 0 12px;line-height:1.7}
+.af-info .af-sec .vch{margin:14px 0 4px}
+.af-info .af-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.af-info .af-acts .btn{margin:0}
+.af-info .pd-buy{margin:18px 0 14px}
+
+/* ---------- อนิเมชันเบา ๆ (2026-11-09) ----------
+   หลัก: ขยับแค่ opacity/transform (ไม่ดันเลย์เอาต์ ไม่บังเนื้อหา) · สั้น ≤ .45s · ขยับระยะน้อย
+   hover ใช้เฉพาะอุปกรณ์ที่มีเมาส์ (มือถือไม่ค้างสถานะ hover) · ปิดทั้งหมดเมื่อผู้ใช้ตั้ง "ลดการเคลื่อนไหว" */
+@keyframes cr-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes cr-sweep{from{background-size:0 100%}to{background-size:100% 100%}}
+@keyframes cr-pop{0%{transform:scale(.6)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:no-preference){
+  /* การ์ดค่อย ๆ ลอยขึ้นตอนโหลด/เปลี่ยนตัวกรอง — ไล่จังหวะแค่ 10 ใบแรก ที่เหลือมาพร้อมกัน */
+  .rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c{animation:cr-rise .42s cubic-bezier(.2,.8,.2,1) backwards}   /* backwards: จบแล้วไม่ค้าง transform ทับ hover เดิมของการ์ด */
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(2){animation-delay:.03s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(3){animation-delay:.06s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(4){animation-delay:.09s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(5){animation-delay:.12s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(6){animation-delay:.15s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(7){animation-delay:.18s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(8){animation-delay:.21s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(9){animation-delay:.24s}
+  :is(.rg-c,.tile,.mdl,.col,.vch,.gx-c,.rp-p,.m1-c,.m3-c):nth-child(n+10){animation-delay:.27s}
+  /* ไฮไลต์มะนาวในหัวเรื่องปาดเข้ามาจากซ้าย */
+  .pagehead h1 em{background:linear-gradient(var(--lime),var(--lime)) no-repeat left/0 100%;animation:cr-sweep .6s .15s cubic-bezier(.2,.8,.2,1) forwards}
+  /* แถบหมวด: วงไอคอนของหมวดที่เลือก "เด้ง" ครั้งเดียว · กดแล้วยุบนิดหนึ่ง */
+  .rk-cat.on svg{animation:cr-pop .4s cubic-bezier(.2,.8,.2,1)}
+  .rk-cat,.chip,.btn{transition:transform .12s,background-color .15s,color .15s,border-color .15s}
+  .rk-cat:active,.chip:active,.btn:active{transform:scale(.96)}
+  .rg-im img{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+}
+@media (prefers-reduced-motion:no-preference) and (hover:hover){
+  .rg-c .rg-im{transition:border-color .15s,transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s}
+  .rg-c:hover .rg-im{transform:translateY(-3px);box-shadow:0 8px 18px -10px rgba(18,18,18,.35)}
+  .rg-c:hover .rg-im img{transform:scale(1.04)}
+  .rk-cat:not(.on):not(.soon):hover{background:#e7e7e3}
+  .rk-cat:not(.on):not(.soon):hover svg{transform:rotate(-8deg)}
+  .rk-cat svg{transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+}
+
+/* ===== หน้าแรก: ฮีโร่สปอตไลต์ + ลีดเดอร์บอร์ดมีแท็บ (ผู้ใช้เลือก 2026-11-09) ===== */
+.hv{margin:8px 0 40px}
+.hv h1{font-family:'Kanit',sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.01em}
+.hv h1 em{font-style:normal;background:var(--lime);padding:0 .18em;border-radius:.2em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hv-br{display:inline-flex;background:var(--tile);border-radius:999px;padding:4px;gap:2px}
+.hv-br button{border:0;background:transparent;border-radius:999px;padding:8px 20px;font:600 14px 'Anuphan',sans-serif;cursor:pointer;color:var(--soft)}
+.hv-br button.on{background:var(--ink);color:#fff}
+.hv-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.hv-chips button,.hv-chips a{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:500 13.5px 'Anuphan',sans-serif;cursor:pointer;color:var(--ink)}
+.hv-chips button.on{background:var(--lime);border-color:var(--lime);font-weight:600}
+.hv-chips a{border-style:dashed}
+/* ฮีโร่: เครื่องใหญ่กลางจอ + ป้ายราคาห้อยข้างเครื่อง */
+.hv1{text-align:center;padding-top:20px}
+.hv1 h1{font-size:clamp(34px,6vw,64px);margin:16px 0 6px}
+.hv1-stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:330px;margin:10px auto 0;max-width:620px;isolation:isolate}
+.hv1-stage::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:#F4FBDD;z-index:-1}
+.hv1-ph svg{display:block;height:320px;width:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.18))}
+.hv-tag{display:grid;background:var(--ink);color:#fff;border-radius:18px;padding:12px 18px;min-width:190px;text-align:left;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.hv-tag small{font-size:12px;color:#cfcfcf}
+.hv-tag small.alt{color:var(--lime);opacity:.85;font-size:11px;max-width:230px}
+.hv-tag b{font:700 30px/1.1 'Kanit',sans-serif;color:var(--lime)}
+.hv-tag span{font-size:12.5px;font-weight:600;margin-top:2px}
+.hv-tag.hang{position:absolute;left:calc(50% + 80px);top:56%;transform:rotate(-3deg)}
+.hv-tag.hang::before{content:'';position:absolute;left:-46px;top:28px;width:46px;border-top:2px dashed var(--ink)}
+.hv-tag.hang::after{content:'';position:absolute;left:-52px;top:24px;width:10px;height:10px;border-radius:50%;background:var(--ink)}
+/* ลีดเดอร์บอร์ด */
+.rk2{margin-top:34px;scroll-margin-top:16px}
+.rk-hd{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:16px}
+.rk-k{display:inline-block;font-size:12px;font-weight:600;background:var(--lime);border-radius:999px;padding:2px 10px}
+.rk-hd h2{font:700 clamp(26px,3.6vw,38px)/1.1 'Kanit',sans-serif;margin-top:6px}
+.rk-more{flex:none;font-weight:600;font-size:14px;border-bottom:2px solid var(--ink);padding-bottom:2px;white-space:nowrap}
+.rk-more span{display:inline-block;transition:.15s}.rk-more:hover span{transform:translateX(3px)}
+.rk2-tabs{display:flex;gap:6px;margin-bottom:6px;overflow-x:auto;padding-bottom:2px}
+.rk2-tabs button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 16px;font:600 14px 'Anuphan',sans-serif;cursor:pointer;color:var(--soft);white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.rk2-tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.rk2-tabs i{font-style:normal;font-size:11px;background:#FF5C8A;color:#fff;border-radius:999px;padding:0 7px;line-height:18px}
+.rk2-note{color:var(--soft);font-size:13.5px;margin:6px 2px 2px}
+.rk2-list{list-style:none;margin:0;padding:0}
+.rk2-list a{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink)}
+.rk2-list li:first-child a{background:linear-gradient(90deg,#F4FBDD,transparent 70%);border-radius:14px}
+.rk2-list a:hover{background:var(--tile);border-radius:14px}
+.rk2-list .im{width:64px;height:64px;border-radius:14px;overflow:hidden;background:var(--tile)}
+.rk2-list .im img{width:100%;height:100%;object-fit:cover}
+.rk2-list .t{min-width:0;display:grid}
+.rk2-list .t b{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rk2-list .t small{color:var(--soft);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rk2-list .box{display:grid;justify-items:center;min-width:84px;border:1.5px solid var(--line);border-radius:12px;padding:6px 10px;transition:.15s}
+.rk2-list a:hover .box{border-color:var(--ink);background:var(--lime)}
+.rk2-list .box small{font-size:12px;color:var(--soft)}
+.rk2-list .box b{font:700 17px 'Kanit',sans-serif}
+.rk2-pg{display:flex;gap:6px;justify-content:center;align-items:center;margin-top:14px}
+.rk2-pg button{min-width:38px;height:38px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:600 14px 'Anuphan',sans-serif;cursor:pointer;color:var(--ink);padding:0 12px}
+.rk2-pg button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.rk2-pg .nx{border-color:var(--ink)}.rk2-pg .nx:hover{background:var(--lime);border-color:var(--lime)}
+.hv-all{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:#fff;border-radius:999px;padding:16px 26px;margin-top:18px;font-size:16px}
+.hv-all b{color:var(--lime)}
+.hv-all .ar{width:36px;height:36px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-weight:700;transition:.15s}
+.hv-all:hover .ar{transform:translateX(3px)}
+@media (max-width:560px){
+  .hv1-stage{min-height:0;flex-direction:column}
+  .hv1-ph svg{height:250px}
+  .hv-tag.hang{position:relative;left:auto;top:auto;transform:rotate(-2deg);margin-top:-30px}
+  .hv-tag.hang::before,.hv-tag.hang::after{display:none}
+  .rk-hd{flex-direction:column;align-items:start;gap:6px}
+  .rk2-list a{grid-template-columns:52px 1fr auto;gap:10px;padding:10px 4px}.rk2-list .im{width:52px;height:52px}
+  .rk2-list .t b{font-size:14px}.rk2-list .box{min-width:72px;padding:5px 8px}.rk2-list .box b{font-size:15px}
+  .hv-all{padding:12px 18px;font-size:14.5px}
+}
+
+/* ปุ่มลองทาบในการ์ดเคส (หน้าอันดับ/รุ่น) */
+.rg-try{display:inline-flex;align-items:center;margin-top:8px;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--lime);font-size:12.5px;font-weight:600;cursor:pointer}
+.rg-try:hover,.rg-try:focus-visible{filter:brightness(1.25)}
+.rk-sorts .rk-daily{display:inline-flex;align-items:center;gap:6px}
+.rk-sorts .rk-daily i{font-style:normal;font-size:11px;background:#FF5C8A;color:#fff;border-radius:999px;padding:0 7px;line-height:18px}
+.rk-sub{font-size:11.5px;font-weight:700;color:var(--soft);letter-spacing:.02em;margin:10px 8px 2px}
+@media (max-width:760px){.rk-sub{flex:none;align-self:center;margin:0 2px 0 6px;white-space:nowrap}}
+.rk-more{background:none;border:0;font:inherit;font-size:13px;font-weight:600;color:var(--soft);cursor:pointer;text-align:left;padding:6px 8px;border-radius:12px}
+.rk-more:hover{background:#fff;color:var(--ink)}
+@media (max-width:760px){.rk-more{flex:none;white-space:nowrap;background:#fff;border-radius:999px;padding:6px 14px}}
+
+/* ===== แถบโค้ดตามเวลา: ฉากหลังเคลื่อนไหว + มาสคอต + เคสประจำวันนี้ ===== */
+.topbar{position:relative;overflow:hidden;isolation:isolate;min-height:50px;padding:6px 16px;
+  background:
+    radial-gradient(circle at 12% 120%,rgba(255,255,255,.55) 0 22px,transparent 23px),
+    radial-gradient(circle at 88% -30%,rgba(255,255,255,.5) 0 26px,transparent 27px),
+    repeating-linear-gradient(115deg,rgba(255,255,255,.18) 0 14px,transparent 14px 28px),
+    linear-gradient(90deg,#C8F542,#DDFB6B 50%,#C8F542);
+  background-size:auto,auto,200px 100%,auto;animation:tb-slide 9s linear infinite}
+@keyframes tb-slide{to{background-position:0 0,0 0,200px 0,0 0}}
+.tb-sky{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.tb-sky i{position:absolute;bottom:-14px;width:9px;height:9px;border-radius:50%;background:#fff;opacity:.7;animation:tb-bub 7s linear infinite}
+.tb-sky i:nth-child(1){left:6%}.tb-sky i:nth-child(2){left:22%;animation-delay:-2s;width:6px;height:6px}
+.tb-sky i:nth-child(3){left:41%;animation-delay:-4.5s}.tb-sky i:nth-child(4){left:63%;animation-delay:-1s;width:5px;height:5px}
+.tb-sky i:nth-child(5){left:79%;animation-delay:-3.2s;width:7px;height:7px}
+.tb-sky i:nth-child(6){left:94%;animation-delay:-5.5s;background:#FF7BA5;width:6px;height:6px}
+@keyframes tb-bub{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.8}100%{transform:translateY(-70px) scale(1.1);opacity:0}}
+.tb-masc{position:relative;display:inline-flex;flex:none;margin-right:-10px}
+.tb-masc svg{overflow:visible;display:block}
+.mc-body{animation:mc-hop 1.6s cubic-bezier(.5,0,.5,1) infinite;transform-origin:24px 54px}
+.mc-shadow{animation:mc-sh 1.6s cubic-bezier(.5,0,.5,1) infinite;transform-origin:24px 55px}
+@keyframes mc-hop{0%,100%{transform:translateY(0) scale(1.06,.94)}12%{transform:translateY(0) scale(1)}45%{transform:translateY(-7px) rotate(-4deg)}70%{transform:translateY(-2px) rotate(3deg)}}
+@keyframes mc-sh{0%,100%{transform:scaleX(1)}45%{transform:scaleX(.6);opacity:.5}}
+.mc-eyes{animation:mc-blink 3.8s infinite;transform-origin:24px 26px}
+@keyframes mc-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.mc-arm{fill:none;stroke:#121212;stroke-width:2.6;stroke-linecap:round}
+.mc-arm.r{animation:mc-wave .8s ease-in-out infinite alternate;transform-origin:39px 30px}
+@keyframes mc-wave{from{transform:rotate(-18deg)}to{transform:rotate(22deg)}}
+.mc-heart{position:absolute;top:-2px;right:-4px;font-style:normal;font-size:11px;color:#FF5C8A;animation:mc-love 2.4s ease-out infinite;opacity:0}
+.mc-heart.b{right:6px;font-size:8px;animation-delay:1.2s}
+@keyframes mc-love{0%{transform:translate(0,8px) scale(.4);opacity:0}25%{opacity:1}100%{transform:translate(6px,-14px) scale(1);opacity:0}}
+.tb-msg{position:relative}
+.tb-day{display:inline-flex;align-items:center;gap:8px;max-width:320px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:3px 12px 3px 3px;text-decoration:none!important;margin:0!important;box-shadow:2px 2px 0 var(--ink);transition:transform .15s,box-shadow .15s;animation:tb-pop 3s ease-in-out infinite}
+.tb-day:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink);animation:none}
+@keyframes tb-pop{0%,86%,100%{transform:rotate(0)}90%{transform:rotate(-2deg)}94%{transform:rotate(2deg)}}
+.tb-dim{position:relative;flex:none;width:32px;height:32px;border-radius:50%;overflow:hidden;background:var(--tile)}
+.tb-dim img{width:100%;height:100%;object-fit:cover;display:block}.tb-dim .noimg svg{width:16px;height:16px}.tb-dim .noimg small{display:none}
+.tb-dt{display:flex;flex-direction:column;min-width:0;text-align:left;line-height:1.2}
+.tb-dt small{font-size:10.5px;font-weight:700;color:#FF3D78}
+.topbar .tb-dt b{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-day em{font-style:normal;font-weight:700;font-size:13px;flex:none}
+@media (max-width:700px){
+  .topbar{gap:4px 10px;padding:6px 10px}
+  .tb-masc svg{width:28px;height:33px}
+  .tb-day{max-width:100%;flex:1 1 100%;justify-content:flex-start}
+  .tb-dt{flex:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .topbar,.tb-sky i,.mc-body,.mc-shadow,.mc-eyes,.mc-arm.r,.mc-heart,.tb-day{animation:none!important}
+}
+
+/* ช่องค้นหาเคสในแถบเมนู (10 พ.ย. 2026) */
+.nav-q{display:flex;align-items:center;background:var(--tile);border-radius:999px;padding:0 4px 0 14px;height:38px;min-width:0}
+.nav-q input{border:0;background:transparent;font:inherit;font-size:14px;width:190px;min-width:0;outline:0;color:var(--ink)}
+.nav-q input::-webkit-search-cancel-button{display:none}
+.nav-q:focus-within{box-shadow:0 0 0 2px var(--ink)}
+.nav-q button{border:0;background:var(--ink);color:#fff;width:30px;height:30px;border-radius:50%;font-size:17px;line-height:1;cursor:pointer;flex:none}
+@media (max-width:1000px){.nav-q input{width:120px}}
+@media (max-width:640px){.nav-q{order:4;width:100%;height:44px}.nav-q input{flex:1;width:auto;font-size:16px}.nav-q button{width:36px;height:36px}}
+.pd-hist .line{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.pd-hist .line span:last-child{font-weight:600;text-align:right}
+.cmp.same{width:100%}.cmp.same th{font-size:12px;font-weight:500;color:var(--soft);text-align:left;padding:4px 6px}
+.cmp.same td{padding:9px 6px;font-size:14px}.cmp.same td:last-child,.cmp.same th:last-child{text-align:right}
+.cmp.same tr.me td{background:var(--tile)}.cmp.same a{font-weight:600;text-decoration:underline}
+
+/* ================= ธีมใหม่ (html.t2 — เปิดด้วย ?theme=2) + หน้า "ที่เก็บไว้" · 10 พ.ย. 2026 =================
+   อ้างอิงแบบร่าง docs/redesign-home.html: พื้นกระดาษนวล · แผ่นหลักน้ำเงิน · ปุ่มซื้อ/ราคาเด่นสีส้ม · ไฮไลต์เหลือง */
+:root{--blue:#2238D6;--blue-d:#1727A8;--blue-l:#DCE1FF;--orange:#FF6A1A;--paper:#F5F2EC}
+html.t2{--lime:#FFC83D;--lime-d:#EFB21F;--tile:#EDE9E0;--line:#E3DED4;--ink:#17181C}
+.t2 body{background:var(--paper);font-family:'IBM Plex Sans Thai','Anuphan',system-ui,sans-serif}
+.t2 h1,.t2 h2,.t2 h3,.t2 .logo,.t2 .btn,.t2 .cta,.t2 .rg-n,.t2 .pd-price b,.t2 .buybar b{font-family:Kanit,'Anuphan',sans-serif}
+.t2 .topbar{background:var(--blue);color:#fff}.t2 .topbar b,.t2 .topbar a{color:#fff}
+.t2 .nav{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 10px 9px 22px;margin-top:14px}
+.t2 .logo i{background:var(--blue);color:#fff;border-radius:9px;transform:rotate(-6deg)}
+.t2 .menu a.on{border-color:var(--blue)}
+.t2 .nav-wn{background:var(--orange);color:#fff;border-radius:999px;padding:0 7px;font-size:12px;font-weight:600;margin-left:3px}
+.t2 .btn{background:var(--orange);color:#fff}.t2 .btn.ghost{background:transparent;color:var(--ink)}
+.t2 .rk-cat{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}.t2 .rk-cat.on{background:var(--ink);box-shadow:none}
+.t2 .pbar{background:rgba(245,242,236,.94)}
+.t2 .rg-im{border-radius:20px}.t2 .rg-n{border-radius:10px;transform:rotate(-6deg)}
+.t2 .rg-c p b{color:var(--blue);font-family:Kanit,sans-serif;font-size:1.12em}
+.t2 .rg-try{background:var(--blue-l);color:var(--blue)}
+.t2 .box{background:#fff}
+/* แถบตัวกรองข้าง: แต่ละกลุ่ม (หมวด/ประเภท/…) เป็นการ์ดขาวมุมมนลอยในกรอบสีนวล มีระยะหายใจรอบด้าน · 10 พ.ย. 2026 */
+.t2 .rk-side{padding:12px}
+.t2 .rk-side .rk-fg,.t2 .rk-side .rk-fg:last-child{background:#fff;border:0;border-radius:18px;padding:14px 10px 12px;margin:0 0 10px;box-shadow:0 1px 0 var(--line)}
+.t2 .rk-side .rk-fg:last-child{margin-bottom:0}
+.t2 .rk-side .rk-fg h5{margin:0 8px 10px;letter-spacing:.02em}
+.t2 .rk-side .rk-opts{gap:4px}
+.t2 .rk-side .rk-opt{padding:8px 10px;line-height:1.35}
+.t2 .rk-side .rk-opt:hover,.t2 .rk-side .rk-opt.on,.t2 .rk-side .rk-more:hover{background:var(--paper)}
+.t2 .rk-side .rk-opt .n,.t2 .rk-side .rk-opt:hover .n{background:var(--tile)}
+.t2 .rk-side .rk-opt.on .n{background:var(--ink)}
+.t2 .rk-side .rk-more{margin-top:2px;padding:8px 10px}
+@media (max-width:760px){
+  .t2 .rk-side .rk-fg{padding:12px}
+  .t2 .rk-side .rk-opt,.t2 .rk-side .rk-more{background:var(--paper);padding:7px 10px 7px 14px}
+  .t2 .rk-side .rk-opt.on{background:var(--ink)}
+  .t2 .rk-side .rk-opt.on .n{background:var(--lime);color:var(--ink)}
+}
+.t2 .foot{background:var(--tile)}
+.rg-wish{position:absolute;right:8px;top:8px;width:38px;height:38px;border-radius:50%;background:#fff;color:#C4BFB4;display:grid;place-items:center;font-size:18px;line-height:1;cursor:pointer;box-shadow:0 0 0 1.5px var(--line);transition:transform .12s}
+.rg-wish:hover{transform:scale(1.1);color:var(--orange)}.rg-wish.on{background:var(--orange);color:#fff;box-shadow:none}
+/* หน้าแรกใหม่ */
+.h2-hero{margin-top:16px;background:var(--blue);color:#fff;border-radius:28px;overflow:hidden}
+.h2-g{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:20px;padding:54px 54px 30px}
+.h2-eye{display:inline-block;background:var(--lime);color:var(--ink);font:600 13px Kanit,sans-serif;padding:5px 12px;border-radius:999px;transform:rotate(-2deg)}
+.h2-hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:800;line-height:1.08;margin:16px 0 12px}
+.h2-hero h1 em{font-style:normal;color:var(--lime)}
+.h2-hero p{color:#D5DAFF;max-width:440px}
+.h2-find{margin-top:24px;background:#fff;border-radius:18px;display:flex;padding:7px;max-width:500px}
+.h2-find input{flex:1;min-width:0;border:0;outline:0;font:inherit;font-size:16px;padding:0 14px;color:var(--ink);background:transparent}
+.h2-find button{border:0;background:var(--orange);color:#fff;font:600 16px Kanit,sans-serif;border-radius:13px;padding:12px 22px;cursor:pointer}
+.h2-quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:13.5px}
+.h2-quick a{border:1.5px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 13px;color:#fff}
+.h2-quick a:hover{background:#fff;color:var(--blue)}
+.h2-art{justify-self:center;width:100%;max-width:400px;aspect-ratio:400/360;position:relative;display:block}
+.h2-deco{position:absolute;inset:0;width:100%;height:100%}
+.h2-p{position:absolute;height:76%;top:12%;filter:drop-shadow(0 14px 18px rgba(8,12,60,.45));transition:transform .25s}
+.h2-p svg{height:100%;width:auto}
+.h2-p.a{left:17%;transform:rotate(-13deg)}.h2-p.b{left:45%;top:9%;transform:rotate(8deg)}
+.h2-art:hover .h2-p.a{transform:rotate(-16deg) translateX(-4px)}.h2-art:hover .h2-p.b{transform:rotate(10deg) translateY(-4px)}
+.h2-heart{position:absolute;width:19%;right:5%;bottom:17%;transform:rotate(10deg)}
+.h2-cap{position:absolute;left:50%;bottom:-2%;transform:translateX(-50%);white-space:nowrap;background:#fff;color:var(--ink);font:500 12.5px 'IBM Plex Sans Thai',sans-serif;border-radius:999px;padding:4px 12px}
+@media (prefers-reduced-motion:reduce){.h2-p{transition:none}}
+.h2-tape{background:var(--lime);color:var(--ink);font:600 14px Kanit,sans-serif;white-space:nowrap;overflow:hidden;padding:9px 0;border-top:2px solid var(--ink)}
+.h2-tape span{display:inline-block;animation:h2run 30s linear infinite}
+.h2-tape b{background:var(--ink);color:var(--lime);border-radius:6px;padding:1px 8px;margin:0 4px;font-variant-numeric:tabular-nums}
+@keyframes h2run{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.h2-tape span{animation:none}}
+.h2-sec{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:54px 0 18px}
+.h2-sec h2{font-size:clamp(25px,3.2vw,36px);font-weight:700;line-height:1.1;font-family:Kanit,'Anuphan',sans-serif}
+.h2-sec h2 small{display:block;font:400 14.5px/1.5 'IBM Plex Sans Thai','Anuphan',sans-serif;color:var(--soft);margin-top:8px}
+.h2-more{font-weight:600;font-size:14.5px;border-bottom:2px solid var(--ink);white-space:nowrap}
+.h2-devs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.h2-dev{background:#fff;border-radius:22px;padding:18px 12px 14px;text-align:center;border:1px solid var(--line);transition:transform .15s,border-color .15s}
+.h2-dev:hover{transform:translateY(-4px);border-color:var(--ink)}
+.h2-da{display:grid;place-items:center;height:132px;margin-bottom:10px}.h2-da svg{height:128px;width:auto}
+.h2-dev b{display:block;font:600 15.5px Kanit,sans-serif}.h2-dev small{color:var(--soft);font-size:13px}
+.h2-st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.h2-s{border-radius:26px;padding:22px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:transform .15s}
+.h2-s:hover{transform:translateY(-4px)}
+.h2-s::after{content:"";position:absolute;right:-26px;bottom:-34px;width:120px;height:170px;border-radius:26px;border:4px solid var(--ink);background:rgba(255,255,255,.55);transform:rotate(14deg)}
+.h2-s b{font:700 23px Kanit,sans-serif;position:relative;z-index:1}.h2-s small{font-size:13.5px;font-weight:500;position:relative;z-index:1}
+/* แถบสไตล์ใต้ฮีโร่ — การ์ดมีรูปเคสจริง เลื่อนแนวนอน (ทุกขนาดจอ) */
+.h2-sty{margin:22px 0 4px}
+.h2-sty-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 2px 12px}
+.h2-sty-h h2{font:700 clamp(22px,2.6vw,30px)/1.1 Kanit,'Anuphan',sans-serif}
+.h2-sty-h small{color:var(--soft);font-size:14px}
+.h2-sty-r{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 10px;scrollbar-width:thin}
+.h2-sc{flex:0 0 150px;scroll-snap-align:start;border-radius:22px;padding:8px 8px 12px;display:flex;flex-direction:column;gap:2px;border:1.5px solid transparent;transition:transform .15s,border-color .15s}
+.h2-sc:hover{transform:translateY(-3px);border-color:var(--ink)}
+.h2-sc-i{display:block;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#fff;margin-bottom:8px}
+.h2-sc-i img{width:100%;height:100%;object-fit:cover;display:block}
+.h2-sc b{font:600 16.5px/1.2 Kanit,sans-serif;padding:0 4px}.h2-sc small{font-size:12.5px;color:var(--soft);padding:0 4px}
+.h2-sc.c0{background:var(--blue-l)}.h2-sc.c1{background:var(--lime)}.h2-sc.c2{background:#BFE8D2}.h2-sc.c3{background:#FFB9C8}
+/* มือถือ/แท็บเล็ต: หัวเว็บสูง ~440px + ฮีโร่ ~720px → ย้ายแถบสไตล์ขึ้นเหนือฮีโร่ให้เห็นในจอแรก (flex เฉพาะ wrap ของหน้าแรกที่มีแถบนี้) */
+@media (max-width:980px){body[data-page=home] .wrap:has(>.h2-sty){display:flex;flex-direction:column}body[data-page=home] .wrap>.h2-sty{order:-1}
+  .h2-sty{margin-top:14px}.h2-sty-r{margin:0 -18px;padding:2px 18px 10px;scrollbar-width:none}.h2-sty-r::-webkit-scrollbar{display:none}.h2-sc{flex-basis:118px;border-radius:18px;padding:6px 6px 10px}.h2-sc-i{border-radius:13px}.h2-sc b{font-size:15px}}
+.h2-s.s0{background:var(--blue-l)}.h2-s.s1{background:var(--lime)}.h2-s.s2{background:#BFE8D2}.h2-s.s3{background:#FFB9C8}
+/* ที่เก็บไว้ */
+.sv-news{background:#DDF3E6;color:#0A6B3D;border-radius:16px;padding:12px 18px;margin-bottom:14px;font-size:14.5px}
+.sv-m{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px 24px}
+.sv-mh{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;font-size:17px}
+.sv-mh b{font:700 26px Kanit,sans-serif;color:var(--orange)}.sv-m.ok .sv-mh b{color:#0A7440}
+.sv-mh span{font-size:14px;color:var(--soft)}
+.sv-bar{height:16px;border-radius:999px;background:var(--tile);margin:14px 0 10px;overflow:hidden}
+.sv-bar i{display:block;height:100%;border-radius:999px;background:repeating-linear-gradient(-45deg,var(--orange) 0 12px,#FF8A47 12px 24px);transition:width .4s}
+.sv-m.ok .sv-bar i{background:#17A35F}
+.sv-list{display:grid;gap:10px;margin-top:16px}
+.sv-r{display:grid;grid-template-columns:84px minmax(0,1fr) auto 38px;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px}
+.sv-r.gone{opacity:.6}
+.sv-im{width:84px;height:84px;border-radius:14px;overflow:hidden;display:block;background:var(--tile)}.sv-im img{width:100%;height:100%;object-fit:cover}
+.sv-t{min-width:0;display:flex;flex-direction:column;gap:3px}
+.sv-t b{font-weight:500;font-size:14.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sv-t small{color:var(--soft);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sv-d{align-self:flex-start;font-size:12.5px;font-weight:600;border-radius:999px;padding:2px 10px}
+.sv-d.dn{background:#DDF3E6;color:#0A6B3D}.sv-d.up{background:#FDE7DA;color:#A3400C}
+.sv-p{display:flex;flex-direction:column;align-items:flex-end;gap:6px}.sv-p b{font:700 22px Kanit,sans-serif;color:var(--blue)}
+.sv-x{width:38px;height:38px;border-radius:50%;border:0;background:var(--tile);color:var(--soft);cursor:pointer;font-size:14px}
+.sv-x:hover{background:var(--ink);color:#fff}
+.sv-empty{background:#fff;border:1px solid var(--line);border-radius:28px;padding:44px 24px;text-align:center}
+.sv-empty h3{font-size:24px;margin:14px 0 6px}.sv-empty p{color:var(--soft);max-width:420px;margin:0 auto 20px}.sv-empty .acts{justify-content:center}
+@media (max-width:900px){
+  .h2-g{grid-template-columns:1fr;padding:30px 22px 22px}.h2-art{max-width:230px;order:-1}
+  .h2-devs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -28px;padding:0 28px 6px;scrollbar-width:none}
+  .h2-dev{flex:0 0 40%;scroll-snap-align:start}
+  .h2-st{grid-template-columns:repeat(2,minmax(0,1fr))}.h2-s{min-height:130px;padding:16px}.h2-s b{font-size:19px}.h2-s::after{width:84px;height:120px}
+  .h2-sec{margin-top:40px}
+}
+@media (max-width:640px){
+  .t2 .nav{border-radius:24px;padding:12px 14px 10px}
+  .sv-r{grid-template-columns:68px minmax(0,1fr) 34px;gap:10px}.sv-im{width:68px;height:68px}
+  .sv-p{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between}
+  .sv-x{grid-column:3;grid-row:1;width:34px;height:34px}
+  .sv-mh b{font-size:22px}.sv-m{padding:18px}
+}
+.sv-im{position:relative}
+.t2 .topbar .tb-day,.t2 .topbar .tb-day b,.t2 .topbar .tb-day small{color:var(--ink)}
+@media (max-width:640px){.t2 .menu a[href*="saved"]{order:-1}}
+
+/* ---------- ธีมใหม่: หน้าในทั้งหมด (10 พ.ย. 2026 รอบ 2) ----------
+   หัวหน้า = แผ่นน้ำเงินแบบฮีโร่หน้าแรก (.ph2 ใส่โดย t2Dress ใน site.js) · โมเดลเครื่องจริงโผล่จากขอบล่าง */
+.t2 .crumb{padding:14px 4px 10px}
+.t2 .wrap>.pagehead.ph2{background:var(--blue);color:#fff;border-radius:28px;padding:0 0 0 44px;margin-bottom:26px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:stretch;gap:24px;overflow:hidden;min-height:236px}
+.t2 .wrap>.pagehead.ph2.noart{grid-template-columns:minmax(0,1fr);padding-right:44px;min-height:0}
+.t2 .ph2 .ph-t{padding:36px 0 34px;align-self:center;min-width:0}
+.t2 .wrap>.pagehead.ph2 h1{color:#fff;font-size:clamp(34px,4.6vw,58px);font-weight:800;letter-spacing:0;line-height:1.12;margin:14px 0 10px;overflow-wrap:anywhere}
+.t2 .wrap>.pagehead.ph2 h1 em{background:none;animation:none;color:var(--lime);padding:0;border-radius:0}
+.t2 .wrap>.pagehead.ph2 p{color:#D5DAFF;max-width:540px;font-size:14.5px;line-height:1.6}
+.t2 .ph2 p b{color:#fff}
+.t2 .ph2 .h2-eye b{background:var(--ink);color:var(--lime);border-radius:6px;padding:0 7px;margin-left:3px;font-variant-numeric:tabular-nums}
+.t2 .wrap>.pagehead.ph2.slim .ph-t{padding:20px 0;display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px}
+.t2 .wrap>.pagehead.ph2.slim h1{font-size:clamp(28px,3.4vw,42px);margin:0;order:-1}
+.t2 .wrap>.pagehead.ph2.slim p{margin-left:auto;max-width:430px;font-size:13.5px}
+.ph-art{position:relative;display:flex;align-items:flex-end;justify-content:center;padding:28px 20px 0 0}
+.ph-art::before{content:"";position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-130px 0 0 -160px;border-radius:50%;background:var(--blue-d)}
+.ph-art>a,.ph-art>span{position:relative;display:block;height:236px;margin:0 -12px -62px;filter:drop-shadow(0 12px 14px rgba(8,12,60,.45));transition:transform .2s}
+.ph-art svg{height:100%;width:auto}
+.ph-art>:nth-child(1){transform:rotate(-9deg) translateY(12px)}
+.ph-art>:nth-child(2){transform:translateY(-8px);z-index:1}
+.ph-art>:nth-child(3){transform:rotate(9deg) translateY(12px)}
+.ph-art>:only-child{transform:rotate(7deg)}
+.ph-art>a:hover{transform:translateY(-18px)}
+.ph-art i{position:absolute;right:-8px;top:-10px;z-index:2;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;border:3px solid var(--ink);display:grid;place-items:center;font:700 18px Kanit,sans-serif;font-style:normal;transform:rotate(8deg)}
+.ph-art>.ph-tk{height:auto;width:min(250px,90%);margin:0;align-self:center;padding-bottom:20px;transform:none;filter:drop-shadow(0 10px 0 rgba(8,12,60,.35))}
+.ph-art>.ph-tk svg{width:100%;height:auto;display:block}
+@media (prefers-reduced-motion:reduce){.ph-art>a,.ph-art>span{transition:none}}
+/* เลือกรุ่น */
+.t2 .mdl-nav a{background:#fff;border:1px solid var(--line)}.t2 .mdl-nav a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.t2 .m1-sec{border-top:0;padding-top:22px}
+.t2 .m1-h{align-items:center}.t2 .m1-h h2{font-size:34px;letter-spacing:0}
+.t2 .m1-h span{background:var(--blue-l);color:var(--blue);border-radius:999px;padding:2px 11px;font-weight:600}
+.t2 .m1-c{background:#fff;border:1px solid var(--line);border-radius:24px}
+.t2 .m1-c:hover{background:#fff;border-color:var(--ink);transform:translateY(-4px)}
+.t2 .m1-scr{font-family:Kanit,sans-serif;color:var(--blue);font-size:50px;letter-spacing:0}
+.t2 .m1-c b{font-family:Kanit,sans-serif;font-weight:600;font-size:16px}
+.t2 .m1-cnt{background:var(--blue-l);color:var(--blue)}
+/* หน้าสินค้า */
+.t2 .pd-head h1{letter-spacing:0}
+.t2 .pd-buy{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 20px}
+.t2 .pd-price b{color:var(--blue);letter-spacing:0}
+.t2 .facts span{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.t2 .box{border-width:1px}
+.t2 .box h3{font-size:19px}
+/* โค้ดส่วนลด */
+.t2 .band{background:transparent;padding:0;border-radius:0}
+.t2 .dl{border:1px solid var(--line)}
+.t2 .dl h4{font-family:Kanit,'Anuphan',sans-serif}
+.t2 .dl.lime{border-color:var(--lime)}
+.t2 .cd div{font-family:Kanit,sans-serif;color:var(--ink)}
+.t2 .steps li::before{background:var(--blue);color:#fff}
+.t2 .vch{border:1px solid var(--line);border-radius:22px}
+.t2 .vch .l b{font-family:Kanit,sans-serif;font-weight:800;letter-spacing:0}
+.t2 .vch .r{position:relative;border-left:2px dashed #C9C3B6}
+.t2 .vch .r::before,.t2 .vch .r::after{content:"";position:absolute;left:-11px;width:20px;height:20px;border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.t2 .vch .r::before{top:-11px}.t2 .vch .r::after{bottom:-11px}
+.t2 .vch.dim{opacity:1}.t2 .vch.dim .l{background:var(--tile);color:#5c5c58}
+.t2 .vch.dim .st{background:var(--tile);border-radius:999px;padding:2px 10px;color:#5c5c58}
+/* เกี่ยวกับ */
+.t2 .prose{background:#fff;border:1px solid var(--line);border-radius:28px;padding:10px 40px 36px;max-width:880px}
+.t2 .prose h3{font-size:22px;margin:30px 0 10px}
+.t2 .prose h3::before{content:"";display:inline-block;width:13px;height:13px;border-radius:4px;background:var(--orange);margin-right:10px;transform:rotate(-8deg)}
+.t2 .prose a{color:var(--blue);text-decoration:underline}
+.t2 .tbl th{background:var(--blue-l);color:var(--blue)}
+.t2 .tbl th:first-child{border-radius:12px 0 0 12px}.t2 .tbl th:last-child{border-radius:0 12px 12px 0}
+/* ท้ายเว็บ */
+.t2 .foot{background:var(--blue-d);color:#D5DAFF;border-radius:36px 36px 0 0}
+.t2 .foot h5,.t2 .foot .logo{color:#fff}
+.t2 .foot a{color:#D5DAFF}.t2 .foot a:hover{color:var(--lime)}
+.t2 .foot .logo i{background:var(--lime);color:var(--ink)}
+.t2 .foot .disc{border-color:rgba(255,255,255,.22);color:#C3CAFF}
+@media (max-width:900px){
+  .t2 .wrap>.pagehead.ph2{grid-template-columns:minmax(0,1fr);padding:0 22px;gap:0;min-height:0}
+  .t2 .wrap>.pagehead.ph2.noart{padding-right:22px}
+  .t2 .ph2 .ph-t{padding:24px 0 20px}
+  .t2 .wrap>.pagehead.ph2.slim .ph-t{padding:16px 0 16px}
+  .ph-art{padding:6px 0 0}.ph-art::before{width:220px;height:220px;margin:-80px 0 0 -110px}
+  .ph-art>a,.ph-art>span{height:150px;margin:0 -8px -46px}
+  .ph-art>.ph-tk{width:170px;padding-bottom:16px}
+  .ph-art i{width:32px;height:32px;font-size:15px}
+  .t2 .prose{padding:6px 20px 24px;border-radius:22px}
+}
+@media (max-width:700px){.t2 .wrap>.pagehead.ph2.slim p{display:none}.t2 .wrap>.pagehead.ph2.slim .ph-t{padding:14px 0}}
+
+/* ================= ธีมคริสต์มาส (html.t2.xmas) · 10 พ.ย. 2026 =================
+   โครงเว็บเดิมทุกอย่าง แค่เปลี่ยนชุดสี + ตกแต่ง: หิมะตกในแผ่นสีหลัก · ไฟประดับบนแถบบน · หมวกซานต้าบนโลโก้ · กองหิมะบนส่วนท้าย
+   เปิดเอง ?xmas=1 · ปิด ?xmas=0 (จำในเครื่อง) · ถ้าไม่ได้ตั้ง เปิดให้ทุกคนช่วง พ.ย. – 6 ม.ค. (site.js) */
+html.t2.xmas{--blue:#B8172F;--blue-d:#0F4A2D;--blue-l:#FBE1E4;--orange:#1D7A45;--lime:#F2C14E;--lime-d:#DFA92C;
+  --snow-a:radial-gradient(circle at 12% 18%,rgba(255,255,255,.95) 0 1.8px,transparent 2.6px),radial-gradient(circle at 58% 42%,rgba(255,255,255,.8) 0 1.3px,transparent 2px),radial-gradient(circle at 84% 8%,rgba(255,255,255,.9) 0 2.2px,transparent 3px),radial-gradient(circle at 34% 76%,rgba(255,255,255,.85) 0 1.6px,transparent 2.4px),radial-gradient(circle at 76% 88%,rgba(255,255,255,.7) 0 1.2px,transparent 1.9px);
+  --snow-b:radial-gradient(circle at 25% 35%,rgba(255,255,255,.6) 0 1px,transparent 1.6px),radial-gradient(circle at 70% 65%,rgba(255,255,255,.55) 0 .9px,transparent 1.5px),radial-gradient(circle at 92% 22%,rgba(255,255,255,.6) 0 1px,transparent 1.6px)}
+@keyframes xm-snow{from{background-position:0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0}to{background-position:30px 180px,30px 180px,30px 180px,30px 180px,30px 180px,-15px 90px,-15px 90px,-15px 90px}}
+.xmas .h2-hero,.xmas .wrap>.pagehead.ph2,.xmas .foot,.xmas .topbar{
+  background-image:var(--snow-a),var(--snow-b);
+  background-size:180px 180px,180px 180px,180px 180px,180px 180px,180px 180px,90px 90px,90px 90px,90px 90px;
+  animation:xm-snow 14s linear infinite}
+.xmas .h2-hero{background-color:var(--blue)}
+.xmas .wrap>.pagehead.ph2{background-color:var(--blue)}
+.xmas .h2-hero p,.xmas .wrap>.pagehead.ph2 p{color:#FBE3E6}
+/* แถบบน: ไฟประดับห้อยตามขอบบน */
+.xmas .topbar{background-color:var(--blue-d);padding-top:16px}
+.xmas .topbar::before{content:'';position:absolute;left:0;right:0;top:0;height:18px;z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='18'%3E%3Cpath d='M0 3 Q16 10 32 3 T64 3 T96 3' fill='none' stroke='%23163a26' stroke-width='1.4'/%3E%3Cg%3E%3Crect x='14' y='6' width='4' height='3' rx='1' fill='%23163a26'/%3E%3Cellipse cx='16' cy='12.5' rx='3.2' ry='4.4' fill='%23FF4D5E'/%3E%3Crect x='46' y='4' width='4' height='3' rx='1' fill='%23163a26'/%3E%3Cellipse cx='48' cy='10.5' rx='3.2' ry='4.4' fill='%23F2C14E'/%3E%3Crect x='78' y='6' width='4' height='3' rx='1' fill='%23163a26'/%3E%3Cellipse cx='80' cy='12.5' rx='3.2' ry='4.4' fill='%235BD18B'/%3E%3C/g%3E%3C/svg%3E") repeat-x 0 0/96px 18px;animation:xm-blink 2.4s steps(2) infinite}
+@keyframes xm-blink{50%{filter:brightness(1.35) saturate(1.2)}}
+.xmas .tb-sky i{background:#fff;opacity:.85}.xmas .tb-sky i:nth-child(6){background:var(--lime)}
+.xmas .topbar .tb-day,.xmas .topbar .tb-day b,.xmas .topbar .tb-day small{color:var(--ink)}
+/* หมวกซานต้าบนโลโก้ */
+.xmas .logo i{position:relative;overflow:visible}
+.xmas .logo i::before{content:'';position:absolute;left:-7px;top:-14px;width:30px;height:24px;pointer-events:none;transform:rotate(-8deg);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 26'%3E%3Cpath d='M4 19 Q8 5 20 3 Q28 2 29 12 L25 11 Q22 8 18 10 Q13 13 12 19 Z' fill='%23D62839'/%3E%3Crect x='1.5' y='16.5' width='19' height='6.5' rx='3.2' fill='%23fff'/%3E%3Ccircle cx='28' cy='13.5' r='3.6' fill='%23fff'/%3E%3C/svg%3E") no-repeat center/contain}
+/* ส่วนท้าย: สีเขียวสน + กองหิมะตามขอบบน */
+.xmas .foot{position:relative;background-color:var(--blue-d);color:#DCEFE3}
+.xmas .foot a{color:#DCEFE3}
+.xmas .foot::before{content:'';position:absolute;left:0;right:0;top:0;height:20px;border-radius:36px 36px 0 0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='20' preserveAspectRatio='none'%3E%3Cpath d='M0 0H140V8Q126 18 110 10T80 12T48 9T20 13T0 8Z' fill='%23fff' fill-opacity='.92'/%3E%3C/svg%3E") repeat-x 0 0/140px 20px}
+/* ป้ายเด่นสีทอง + ดาวเล็ก */
+.xmas .h2-eye::before{content:'★ ';color:var(--blue)}
+.xmas .rg-n{background:var(--blue);color:#fff}
+@media (prefers-reduced-motion:reduce){.xmas .h2-hero,.xmas .wrap>.pagehead.ph2,.xmas .foot,.xmas .topbar,.xmas .topbar::before{animation:none!important}}
+/* แถบเมนูช่วงจอ 641–1100px: โลโก้/เมนูเคยตัดเป็นสองบรรทัด ("รวม/เคส", "อันดับ/เคส") — ห้ามตัดคำ แล้วบีบระยะแทน */
+.logo{white-space:nowrap;flex:none}.menu a{white-space:nowrap}
+@media (min-width:641px) and (max-width:1100px){.nav,.t2 .nav{gap:14px}.menu,.t2 .menu{gap:16px;font-size:14px}.nav-q input{width:96px}}
+/* ===== 10 พ.ย. 2026 (รอบ 2) =====
+   1) แถบเมนูหลัก กับ แถบหมวดสินค้า เคยชิดกันจนดูเป็นก้อนเดียว — เว้นระยะ
+   2) หน้าสินค้า: กล่องราคา/โค้ด/ราคาย้อนหลัง เคยเป็นแถบขาวเต็มกว้างคั่นเส้นดำบนพื้นครีม (ขาว-ครีม-ดำสลับกันอ่านยาก)
+      → การ์ดขาวมุมมนแบบเดียวกับแถบตัวกรองข้าง มีระยะห่างระหว่างการ์ด เส้นคั่นภายในใช้สีอ่อน */
+.t2 .nav+.rk-cats{margin:14px 0 16px}
+.t2 .pd-c2 .box.acc,.t2 .pd-c2 .box.acc:last-of-type{background:#fff;border:1px solid var(--line);border-radius:22px;padding:0 22px;margin:0 0 12px}
+.t2 .pd-c2 .acc>summary{padding:18px 0}
+.t2 .pd-c2 .acc>summary h3{font-size:19px}
+.t2 .pd-c2 .acc-b{padding:0 0 20px}
+.t2 .pd-c2 .acc[open]>summary{border-bottom:1px solid var(--line);margin-bottom:14px}
+.t2 .pd-c2 .warnbox{margin:14px 0 4px;border-radius:16px}
+.t2 .pd-head{margin-bottom:14px}
+.t2 .pd-c2 .calc .total{border-top:1.5px solid var(--line)}
+.t2 .pd-c2 .cmp td,.t2 .pd-c2 .cmp th{border-color:var(--line)}
+.t2 .pd-c2 .qty{border-width:1px}
+.t2 .pd-c2 .qty button{background:var(--paper)}
+.t2 .pd-cta{margin-top:18px}
+@media (max-width:640px){.t2 .pd-c2 .box.acc,.t2 .pd-c2 .box.acc:last-of-type{padding:0 16px;border-radius:18px}}
+
+/* หัวเว็บบนมือถือให้เตี้ยลง (13 พ.ย.: เดิมสูง ~440px เกินครึ่งจอก่อนเห็นเนื้อหา)
+   แถบบน = มาสคอต + เคสประจำสัปดาห์แถวเดียว (ซ่อนข้อความนับเวลา — มีในแถบวิ่งหน้าแรกและหน้าโค้ด) ·
+   nav = โลโก้ + ช่องค้นหาแถวแรก, เมนู + "เคสทุกรุ่น" แถวสอง · ลดช่องไฟหมวดและแถบเลือกรุ่น */
+@media (max-width:640px){
+  .topbar,.xmas .topbar{flex-wrap:nowrap;padding:12px 10px 6px;min-height:0}
+  .topbar .tb-msg{display:none}
+  .tb-masc{margin-right:0}
+  .tb-day{flex:1 1 auto;min-width:0}
+  .t2 .nav{margin-top:10px;padding:8px 8px 6px 14px;gap:8px 10px}
+  .t2 .nav .logo{font-size:20px}
+  .t2 .nav{flex-wrap:wrap}
+  .nav-q,.t2 .nav-q{order:2;flex:1 1 150px;width:auto;height:40px}
+  .nav-q button{width:32px;height:32px}
+  .menu,.t2 .menu{order:3;flex:1 1 190px;width:auto;min-width:0;padding-bottom:2px}
+  .cta,.t2 .cta{order:4;margin-left:0;padding:7px 13px;font-size:13px}
+  .t2 .nav+.rk-cats,.nav+.rk-cats{margin:10px 0 10px}
+  .pbar{padding:6px 0}
+}
+
+/* ---------- ไถดูเคส (TikTok-style) ---------- */
+.fd-open{display:flex;align-items:center;gap:12px;width:100%;margin:0 0 14px;padding:10px 16px 10px 10px;border:0;border-radius:20px;background:var(--ink);color:#fff;font:inherit;text-align:left;cursor:pointer}
+.fd-open .fd-oi{flex:none;width:40px;height:40px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-size:15px;padding-left:3px}
+.fd-open b{display:block;font:600 17px Kanit,'Anuphan',sans-serif}.fd-open small{font-size:12.5px;color:#cfcfca}
+.fd-open:hover{background:#2a2b30}
+.rg-c .rg-wk{position:absolute;left:8px;bottom:8px;font-style:normal;font-size:11px;font-weight:600;background:var(--lime);color:var(--ink);border-radius:999px;padding:2px 9px}
+html.fd-lock,html.fd-lock body{overflow:hidden}
+.fd{position:fixed;inset:0;z-index:200;background:#0d0d10;color:#fff}
+.fd-top{position:absolute;left:0;right:0;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:linear-gradient(#0d0d10cc,transparent);pointer-events:none}
+.fd-top b{font:600 15px Kanit,'Anuphan',sans-serif}
+.fd-x{pointer-events:auto;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:18px;cursor:pointer}
+.fd-s{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior:contain;scrollbar-width:none;outline:0}
+.fd-s::-webkit-scrollbar{display:none}
+.fd-i{position:relative;height:100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:center;max-width:520px;margin:0 auto;padding:60px 14px 18px}
+.fd-im{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center}
+.fd-im img{max-width:100%;max-height:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:#fff}
+.fd-im .noimg{color:#aaa}
+.fd-info{flex:none;padding:14px 64px 0 4px}
+.fd-n{font-size:12px;color:#9a9a96;margin-right:8px}
+.fd-tg{font-size:12.5px;color:var(--lime);font-weight:600}
+.fd-info h3{font:500 15px/1.4 'IBM Plex Sans Thai','Anuphan',sans-serif;margin:6px 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fd-info p{font-size:13.5px;color:#cfcfca;margin:0}.fd-info p b{font:700 22px Kanit,sans-serif;color:#fff}
+.fd-buy{display:block;margin-top:12px;text-align:center;background:#EE4D2D;color:#fff;border-radius:14px;padding:12px;font-weight:600}
+.fd-side{position:absolute;right:12px;bottom:118px;z-index:2;display:flex;flex-direction:column;gap:14px}
+.fd-b{display:flex;flex-direction:column;align-items:center;gap:3px;border:0;background:none;color:#fff;font:inherit;cursor:pointer;padding:0}
+.fd-b i{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;font-style:normal;font-size:20px;font-weight:700}
+.fd-b small{font-size:11px;color:#ddd}
+.fd-b.on i{background:#FF3D78}
+.fd-hint{position:absolute;left:50%;bottom:40%;transform:translateX(-50%);z-index:3;pointer-events:none;background:rgba(0,0,0,.6);border-radius:999px;padding:8px 16px;font-size:13px;white-space:nowrap;transition:opacity .3s;animation:fd-nudge 1.4s ease-in-out infinite}
+.fd-hint span{display:inline-block;margin-right:6px}
+.fd.moved .fd-hint{opacity:0}
+@keyframes fd-nudge{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-8px)}}
+@media (prefers-reduced-motion:reduce){.fd-hint{animation:none}}
+@media (min-width:700px){.fd-open{max-width:420px}}
+@media (max-width:640px){body[data-page=model] .pagehead .ph-art{display:none}}   /* มือถือ: เอาภาพเครื่องในหัวหน้ารุ่นออก ให้ปุ่มไถดูเคสขึ้นมาในจอแรก */
+/* ไถดูเคส (ป๊อปอัป) แก้ 2026-11-14: ปุ่มด้านขวาทับภาพเคสพื้นขาว → มองไม่เห็น ♥ และป้าย "เก็บ" ขาด
+   มือถือ: เว้นที่ขวาของภาพให้แถบปุ่ม · จอกว้าง ≥640px: ย้ายแถบปุ่มออกนอกคอลัมน์ · ปุ่มพื้นเข้มขึ้นให้อ่านได้บนทุกภาพ */
+.fd-im{padding-right:58px}
+.fd-b i{background:rgba(40,40,46,.88);box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+.fd-b small{text-shadow:0 1px 3px rgba(0,0,0,.8)}
+@media (min-width:640px){.fd-im{padding-right:0}.fd-side{right:-64px}}
+/* 14 พ.ย.: เอาเคสประจำสัปดาห์ (.tb-day) ออกจากแถบบนตามที่ผู้ใช้สั่ง → มือถือแสดงข้อความนับเวลาโค้ดแทน (เดิมซ่อนไว้ให้ที่เคส) */
+@media (max-width:640px){.topbar .tb-msg{display:block;flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
